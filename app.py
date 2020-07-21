@@ -15,6 +15,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/user_overview')
 def user_overview():

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test connection</title>
+</head>
+<body>
+    <h1>It works! My project is ready to get Move(ing)On :D</h1>
+    {% for task in tasks %}
+        {{task.task_title}}
+        {{task.task_info}}
+        {{task.delegation}}
+        {{task.task_due}}
+    {% endfor %}
+</body>
+</html>

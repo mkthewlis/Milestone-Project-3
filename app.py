@@ -19,6 +19,15 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/sign_in')
+def sign_in():
+    return render_template('signin.html')
+
+
+"""
+def index():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
     
@@ -28,9 +37,22 @@ def index():
 def login():
     return ''
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    return ''
+    if request.method == 'POST':
+        users = mongo.db.users
+        returning_user = users.find_one({'name' : request.form['username']}) 
+
+        if returning_user is None:
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            users.insert({'name' : request.form['username'], 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+
+        return 'That username already exists!'
+
+    return render_template('signup.html')
+    """
 
 """@app.route('/')
 @app.route('/user_overview')

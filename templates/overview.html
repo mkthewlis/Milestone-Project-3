@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>Welcome. Your project works! My project is ready to get Move(ing)On :D</h1>
+    <h1>Welcome {{ session.username }}! Let's get you set up and ready to start Move[ing]On</h1>
     
     {% for task in tasks %}
         {{task.task_title}}

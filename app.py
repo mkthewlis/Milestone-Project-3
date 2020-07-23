@@ -39,15 +39,12 @@ def sign_in():
         # If user is already logged in, redirect to /'overview'
         if 'username' in session:
             return redirect(url_for('overview'))
-
     # This simply returns to html page if the request is 'GET'
         else: 
             return render_template('signin.html')
-
     # If 'POST', this checks the returning user's details to see if they match what is stored in the DB
     elif request.method == "POST":     
         login_user = users.find_one({'name': request.form['username']})
-
         # This checks to see if the hashed password written matches the hashed password in the DB and adds them to the session
         if login_user:
             if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
@@ -59,18 +56,10 @@ def sign_in():
 
 
 # Routing that shows the users overview/ dashboard when they have logged in or registered
-@app.route('/overview', methods=['GET'])
+@app.route('/overview', methods=['GET', 'POST'])
 def overview():
-    # This confirms who the user is when they have logged in/ registered
-    """if 'username' in session:
-        return 'You are logged in as ' + session['username']"""
 
     return render_template('overview.html')
-
-
-@app.route('/login')
-def login():
-    return ''
 
 
 # Routing for new users to sign up, hashing the password for security

@@ -15,9 +15,11 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
+
 # Defines variables used throughout app
-tasks=mongo.db.tasks.find()
+tasks = mongo.db.tasks.find()
 users = mongo.db.users
+
 
 # Begins by routing user to home page
 @app.route('/')
@@ -29,19 +31,24 @@ def index():
 # Routing for returning users to log back in
 @app.route('/sign_in', methods=['POST', 'GET'])
 def sign_in():
-    # Checks if there is a username already in the DB matching what the user has written
-    users = mongo.db.users
-    login_user = users.find_one({'name' : request.form['username']})
-    return render_template('signin.html')
+    if request.method == "GET":
+    # a GET request means we want to return the html page
+        return render_template('signin.html')
 
-    #If so, checks to see if the hashed password written matches the hashed password in the DB and adds them to the session
-    if login_user:
-        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
-            session['username'] = request.form['username']
-            #If correct, the user is sent to their personal overview page with all task functions available to them
-            return redirect(url_for('overview'))
+    elif request.method == "POST":     
+        # Checks if there is a username already in the DB matching what the user has written
+        login_user = users.find_one({'name': request.form['username']})
+        return redirect(url_for('overview'))
 
-    return 'Invalid username/ password combination'
+        # If so, checks to see if the hashed password written matches the hashed password in the DB and adds them to the session
+        if login_user:
+            if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+                session['username'] = request.form['username']
+                # If correct, the user is sent to their personal overview page with all task functions available to them
+                return redirect(url_for('overview'))
+
+        return 'Invalid username/ password combination'
+
 
 # Routing that shows the users overview/ dashboard when they have logged in or registered
 @app.route('/overview', methods=['GET'])
@@ -49,7 +56,7 @@ def overview():
     # This confirms who the user is when they have logged in/ registered
     if 'username' in session:
         return 'You are logged in as ' + session['username']
-    
+
     return render_template('overview.html')
 
 
@@ -62,12 +69,14 @@ def login():
 @app.route('/sign_up', methods=['POST', 'GET'])
 def sign_up():
     if request.method == 'POST':
-        existing_user = users.find_one({'name' : request.form['username']})
+        existing_user = users.find_one({'name': request.form['username']})
 
+        # If there is no existing user, the entered password is hashed for security before being sent to store in the DB
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'name' : request.form['username'], 'password' : hashpass})
+            users.insert({'name': request.form['username'], 'password': hashpass})
             session['username'] = request.form['username']
+            # With the user data stored, they are sent to their new 'overview' page
             return redirect(url_for('overview'))
 
         return 'That username already exists!'

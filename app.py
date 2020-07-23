@@ -15,6 +15,11 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
+""" The following code creates a simple app that allows a user to register, login and view their account. From there, they can 
+manage their tasks with all CRUD functions to optimise the user's experience to get ready for their move. The following tutorials
+listed below were used as a basis to inspire the login/ logout functionality:
+Register/ login: https://www.youtube.com/watch?v=vVx1737auSE&list=PLXmMXHVSvS-Db9KK1LA7lifcyZm4c-rwj&index=5
+Logout: https://flask.palletsprojects.com/en/0.12.x/quickstart/#sessions"""
 
 # Defines variables used throughout app
 tasks = mongo.db.tasks.find()
@@ -58,8 +63,7 @@ def sign_in():
 # Routing that shows the users overview/ dashboard when they have logged in or registered
 @app.route('/overview', methods=['GET', 'POST'])
 def overview():
-
-    return render_template('overview.html')
+    return render_template('overview.html', tasks=mongo.db.tasks.find())
 
 
 # Routing for new users to sign up, hashing the password for security
@@ -86,11 +90,6 @@ def logout():
     # This removes the current username from the session
     session.pop('username', None)
     return redirect(url_for('sign_in'))
-
-"""@app.route('/')
-@app.route('/user_overview')
-def user_overview():
-    return render_template("overview.html", tasks=mongo.db.tasks.find())"""
 
 
 if __name__ == '__main__':

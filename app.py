@@ -36,8 +36,13 @@ def tips():
 @app.route('/sign_in', methods=['POST', 'GET'])
 def sign_in():
     if request.method == "GET":
+        # If user is already logged in, redirect to /'overview'
+        if 'username' in session:
+            return redirect(url_for('overview'))
+
     # This simply returns to html page if the request is 'GET'
-        return render_template('signin.html')
+        else: 
+            return render_template('signin.html')
 
     # If 'POST', this checks the returning user's details to see if they match what is stored in the DB
     elif request.method == "POST":     

@@ -8,17 +8,42 @@
     <title>MoveOn</title>
 </head>
 <body>
-    <header>
-    </header>
+    <div id="container">
+        <header>
+            <!--Basic navbar structure from Bootstrap with additional styling-->
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="{{url_for('index')}}">MoveOn</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse menu-font" id="navbarNav">
+                    <ul class="navbar-nav ml-auto menu-collapse-align">
+                        <li class="nav-item mr-2 active">
+                            <a class="nav-link" href="{{url_for('index')}}">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="{{url_for('tips')}}">Top Tips</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="{{url_for('sign_in')}}">Sign In</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="{{url_for('sign_up')}}">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
     <main>
     {% block content %}
-
     {% endblock %}
     </main>
     <footer>
     </footer>
+    </div>
 
     <!-- Link to local JavaScript file (not yet created-->
     <!--<script src="{{ url_for('static', filename='js/.js') }}"></script>-->
+
 </body>
 </html>

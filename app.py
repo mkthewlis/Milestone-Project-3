@@ -20,12 +20,17 @@ mongo = PyMongo(app)
 tasks = mongo.db.tasks.find()
 users = mongo.db.users
 
-# Begins by routing user to home page
+# Routes user to home page
 @app.route('/')
-@app.route('/index.html')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
+
+# Routes user to top tips
+@app.route('/tips')
+def tips():
+    return render_template('tips.html')
 
 # Routing for returning users to log back in
 @app.route('/sign_in', methods=['POST', 'GET'])

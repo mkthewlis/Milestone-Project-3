@@ -20,7 +20,6 @@ mongo = PyMongo(app)
 tasks = mongo.db.tasks.find()
 users = mongo.db.users
 
-
 # Begins by routing user to home page
 @app.route('/')
 @app.route('/index.html')
@@ -32,17 +31,16 @@ def index():
 @app.route('/sign_in', methods=['POST', 'GET'])
 def sign_in():
     if request.method == "GET":
-    # a GET request means we want to return the html page
+    # This simply returns to html page if the request is 'GET'
         return render_template('signin.html')
 
+    # If 'POST', this checks the returning user's details to see if they match what is stored in the DB
     elif request.method == "POST":     
-        # Checks if there is a username already in the DB matching what the user has written
         login_user = users.find_one({'name': request.form['username']})
-        return redirect(url_for('overview'))
 
-        # If so, checks to see if the hashed password written matches the hashed password in the DB and adds them to the session
+        # This checks to see if the hashed password written matches the hashed password in the DB and adds them to the session
         if login_user:
-            if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+            if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
                 session['username'] = request.form['username']
                 # If correct, the user is sent to their personal overview page with all task functions available to them
                 return redirect(url_for('overview'))
@@ -54,8 +52,8 @@ def sign_in():
 @app.route('/overview', methods=['GET'])
 def overview():
     # This confirms who the user is when they have logged in/ registered
-    if 'username' in session:
-        return 'You are logged in as ' + session['username']
+    """if 'username' in session:
+        return 'You are logged in as ' + session['username']"""
 
     return render_template('overview.html')
 

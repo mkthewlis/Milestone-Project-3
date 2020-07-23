@@ -13,7 +13,12 @@ app = Flask(__name__)
 app.config["MONGO_BDNAME"] = 'moveon_database'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
+
+# Defines variables used throughout app
 mongo = PyMongo(app)
+tasks = mongo.db.tasks.find()
+users = mongo.db.users
+
 
 """ The following code creates a simple app that allows a user to register, login and view their account. From there, they can 
 manage their tasks with all CRUD functions to optimise the user's experience to get ready for their move. The following tutorials
@@ -21,9 +26,6 @@ listed below were used as a basis to inspire the login/ logout functionality:
 Register/ login: https://www.youtube.com/watch?v=vVx1737auSE&list=PLXmMXHVSvS-Db9KK1LA7lifcyZm4c-rwj&index=5
 Logout: https://flask.palletsprojects.com/en/0.12.x/quickstart/#sessions"""
 
-# Defines variables used throughout app
-tasks = mongo.db.tasks.find()
-users = mongo.db.users
 
 # Routes user to home page
 @app.route('/')

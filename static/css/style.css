@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Roboto:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Roboto:wght@100;300;400;500&display=swap');
 
 /*----------------------------------------------------------------------------### START OF: General project styles ### */
 
@@ -27,7 +27,6 @@ body {
 
 .standard-sign-up-btn {
     background-color: #EFB7B9;
-    color: #F9F6EC;
     border: 1px solid #F9F6EC;
     border-radius: 20px;
 }
@@ -50,22 +49,26 @@ body {
     text-decoration: none;
 }
 
-.nav-item a {
-    font-family: 'Roboto', sans-serif;
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     color: #3A2E39;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
-.nav-item a:hover {
+.navbar-light .navbar-nav .nav-link:hover {
     color: #EFB7B9;
 }
 
-.nav-item .standard-sign-up-btn {
+#nav-btn {
     color: #F9F6EC;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.nav-item .standard-sign-up-btn:hover {
+#nav-btn:hover {
     background-color: #E99B9D;
     color: #F9F6EC;
 }

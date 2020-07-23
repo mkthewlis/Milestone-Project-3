@@ -77,3 +77,22 @@ body {
 
 /*----------------------------------------------------------------------------### END OF: General project styles ### */
 /*----------------------------------------------------------------------------### START OF: index.html ### */
+
+/*----------------------------------------------------Main section styling*/
+.index-main {
+    height: 400px;
+}
+
+.main-titles {
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 0px;
+    z-index:1;
+	margin-right: -300px;
+}
+
+.main-image {
+    padding-top: 15%;
+    height: 500px;
+    width: 600px;
+}

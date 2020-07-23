@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
+<div class="container-fluid">
+    <div class="row index-main">
+        <div class="col-md-8 main-titles">
             <h3>Welcome to MoveOn!</h3>
             <h4>This is a work in progress - watch this space! Complete app coming soon</h4>
         </div>
-        <div class="col-md-6">
-                <img class="" src="{{url_for('static', filename='/images/' + 'undraw_to_do_list.png')}}" alt="Writing a to do list" />
-            </div>
+        <div class="col-md-4">
+            <img class="main-image" src="{{url_for('static', filename='/images/' + 'undraw_to_do_list.png')}}" alt="Writing a to do list" />
+        </div>
         </div>
     </div>
 </div>

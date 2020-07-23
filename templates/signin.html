@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h1>This is a test!</h1>
+<h1>Welcome back returning user!</h1>
 
 
-<form method=POST action="{{ url_for('login') }}">
+<form method="POST" action="{{ url_for('login') }}">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
@@ -17,7 +16,7 @@
             </form>
             <br>
             <div>
-                Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a>.
+                Don't have an account? <a href="{{ url_for('sign_up') }}">Sign up here</a>.
             </div>
 
 {% endblock %}

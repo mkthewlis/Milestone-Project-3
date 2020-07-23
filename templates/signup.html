@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% block content %}
+<h1>Hello there new user!</h1>
 
-<form method=POST action="{{ url_for('register') }}">
+<form method=POST action="{{ url_for('sign_up') }}">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
                     <input type="text" class="form-control" name="username" placeholder="Username">
@@ -12,5 +14,5 @@
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
             </form>
 
-{% block content %}
+
 {% endblock %}

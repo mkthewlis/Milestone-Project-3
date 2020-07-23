@@ -16,43 +16,48 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
+"""Used as an example to test overview.html"""
+tasks=mongo.db.tasks.find()
 
 @app.route('/')
+@app.route('/index.html')
 def index():
     return render_template('index.html')
 
+
 @app.route('/sign_in')
 def sign_in():
-    return render_template('signin.html')
-
-
-"""
-def index():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
-    
+
     return render_template('signin.html')
+
+
+@app.route('/overview')
+def overview():
+    return render_template('overview.html')
 
 @app.route('/login')
 def login():
     return ''
 
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
+
+@app.route('/sign_up', methods=['POST', 'GET'])
+def sign_up():
     if request.method == 'POST':
         users = mongo.db.users
-        returning_user = users.find_one({'name' : request.form['username']}) 
+        existing_user = users.find_one({'name' : request.form['username']})
 
-        if returning_user is None:
+        if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
             users.insert({'name' : request.form['username'], 'password' : hashpass})
             session['username'] = request.form['username']
-            return redirect(url_for('index'))
+            return redirect(url_for('sign_in'))
 
         return 'That username already exists!'
 
     return render_template('signup.html')
-    """
+
 
 """@app.route('/')
 @app.route('/user_overview')

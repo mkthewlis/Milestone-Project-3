@@ -11,15 +11,15 @@
     <div id="container">
         <header>
             <!--Basic navbar structure from Bootstrap with additional styling-->
-            <nav class="navbar navbar-expand-md navbar-light navbar-bg">
+            <nav class="navbar navbar-expand-md navbar-bg">
                 <a class="logo-design" href="{{url_for('index')}}">MoveOn</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse menu-font" id="navbarNav">
                     <ul class="navbar-nav ml-auto menu-collapse-align">
-                        <li class="nav-item mr-2 active">
-                            <a class="nav-link" href="{{url_for('index')}}">Home<span class="sr-only">(current)</span></a>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="{{url_for('index')}}">Home</a>
                         </li>
                         <li class="nav-item mr-2">
                             <a class="nav-link" href="{{url_for('tips')}}">Top Tips</a>
@@ -28,7 +28,7 @@
                             <a class="nav-link" href="{{url_for('sign_in')}}">Sign In</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="{{url_for('sign_up')}}">Sign Up</a>
+                            <a class="nav-link standard-sign-up-btn" href="{{url_for('sign_up')}}">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -42,6 +42,11 @@
     </footer>
     </div>
 
+    <!--Link to Bootstrap scripts-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
     <!-- Link to local JavaScript file (not yet created-->
     <!--<script src="{{ url_for('static', filename='js/.js') }}"></script>-->
 

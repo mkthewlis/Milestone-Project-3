@@ -19,11 +19,18 @@ body {
 
 .navbar-bg {
     background-color: #F6FDF8;
-    height: 120px;
+    height: 100px;
 }
 
 /*----------------------------------------------------Font styling*/
 /*----------------------------------------------------Button styling*/
+
+.standard-sign-up-btn {
+    background-color: #EFB7B9;
+    color: #F9F6EC;
+    border: 1px solid #F9F6EC;
+    border-radius: 20px;
+}
 /*----------------------------------------------------Navbar styling*/
 
 .logo-design {
@@ -43,6 +50,25 @@ body {
     text-decoration: none;
 }
 
+.nav-item a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #3A2E39;
+}
+
+.nav-item a:hover {
+    color: #EFB7B9;
+}
+
+.nav-item .standard-sign-up-btn {
+    color: #F9F6EC;
+}
+
+.nav-item .standard-sign-up-btn:hover {
+    background-color: #E99B9D;
+    color: #F9F6EC;
+}
 
 /*----------------------------------------------------Footer styling*/
 

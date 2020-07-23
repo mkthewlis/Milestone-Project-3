@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>Welcome {{ session.username }}! Let's get you set up and ready to start Move[ing]On</h1>
+    <h3>Welcome {{ session.username }}! Let's get you set up and ready to start Move[ing]On</h3>
     
+    <h3>Do you want to logout?</h3>
+
+    <a href="{{url_for('logout')}}">Logout</a>
     {% for task in tasks %}
         {{task.task_title}}
         {{task.task_info}}

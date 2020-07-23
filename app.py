@@ -80,6 +80,12 @@ def sign_up():
 
     return render_template('signup.html')
 
+# Function to logout existing users
+@app.route('/logout')
+def logout():
+    # This removes the current username from the session
+    session.pop('username', None)
+    return redirect(url_for('sign_in'))
 
 """@app.route('/')
 @app.route('/user_overview')

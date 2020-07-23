@@ -19,10 +19,20 @@ body {
 
 .navbar-bg {
     background-color: #F6FDF8;
-    height: 100px;
+    min-height: 100px;
 }
 
 /*----------------------------------------------------Font styling*/
+
+.standard-heading {
+    color: #3A2E39;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 45px;
+}
+
 /*----------------------------------------------------Button styling*/
 
 .standard-sign-up-btn {
@@ -66,6 +76,7 @@ body {
     color: #F9F6EC;
     padding-left: 10px;
     padding-right: 10px;
+    width: 95px;
 }
 
 #nav-btn:hover {
@@ -84,6 +95,11 @@ body {
 }
 
 .main-titles {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 56px;
     padding-top: 5%;
     padding-left: 5%;
     padding-right: 0px;

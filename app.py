@@ -18,9 +18,24 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
+def index():
+    if 'username' in session:
+        return 'You are logged in as ' + session['username']
+    
+    return render_template('signin.html')
+
+@app.route('/login')
+def login():
+    return ''
+
+@app.route('/signup')
+def signup():
+    return ''
+
+"""@app.route('/')
 @app.route('/user_overview')
 def user_overview():
-    return render_template("overview.html", tasks=mongo.db.tasks.find())
+    return render_template("overview.html", tasks=mongo.db.tasks.find())"""
 
 
 if __name__ == '__main__':
@@ -28,4 +43,3 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
     debug=True)
-

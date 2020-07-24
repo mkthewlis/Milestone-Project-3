@@ -43,7 +43,7 @@ def tips():
 @app.route('/sign_in', methods=['POST', 'GET'])
 def sign_in():
     if request.method == "GET":
-        # This simply returns to html page if the request is 'GET'
+        # This returns to html page if the request is 'GET' and redirects logged in user to their overview
         if 'username' in session:
             return redirect(url_for('overview'))
 
@@ -96,6 +96,11 @@ def logout():
 @app.route('/new_task')
 def new_task():
     return render_template('newtasks.html')
+
+
+@app.route('/add_task')
+def add_task():
+    return ''
 
 
 @app.route('/update_tasks')

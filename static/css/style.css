@@ -20,6 +20,12 @@ body {
     margin-bottom: 5%;
 }
 
+.standard-box {
+    border: 6px solid #DCE3ED;
+    margin-top: 50px;
+    padding-bottom: 10px;
+}
+
 /*----------------------------------------------------Background colour*/
 
 .navbar-bg {
@@ -52,6 +58,7 @@ body {
 .standard-sign-up-btn {
     background-color: #EFB7B9;
     border: 1px solid #F9F6EC;
+    color: #F9F6EC;
     border-radius: 20px;
     font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
@@ -228,4 +235,13 @@ body {
 
 ul {
     list-style-type: none;
+}
+
+/*----------------------------------------------------------------------------### END OF: overview.html ### */
+/*----------------------------------------------------------------------------### START OF: newtasks.html ### */
+
+.new-task-image {
+    height: 400px;
+    max-width: 400px;
+    padding-top: 0px;
 }

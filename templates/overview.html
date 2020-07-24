@@ -1,18 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="standard-heading title-margin-top">Welcome {{ session.username }}! <br> Let's get you set up and ready to start Move[ing]On</h3>
+        </div>
+    </div>
+    <!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
+    <div class="row">
+        <div class="col">
+            <h4> Pending tasks: </h4>
+            {% for task in tasks %}
+                <li>{{task.task_title}}</li>
+                <li>{{task.task_info}}</li>
+                {{task.delegation}}
+                {{task.task_due}}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h4> Completed tasks: </h4>
 
-    <h3>Welcome {{ session.username }}! Let's get you set up and ready to start Move[ing]On</h3>
-
-    <h4> Here are your current tasks: </h4>
-    {% for task in tasks %}
-        {{task.task_title}}
-        {{task.task_info}}
-        {{task.delegation}}
-        {{task.task_due}}
-    {% endfor %}
-
-    <h4>Do you want to logout?</h4>
-
-    <a href="{{url_for('logout')}}">Logout</a>
-
+            <!-- Previous code that worked:
+            {% for task in tasks %}
+                {{task.task_title}}
+                {{task.task_info}}
+                {{task.delegation}}
+                {{task.task_due}}
+            {% endfor %}
+            -->
+        </div>
+    </div>
+</div>
 {% endblock %}

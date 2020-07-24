@@ -93,6 +93,30 @@ body {
     color: #F9F6EC;
 }
 
+.task-btn {
+    color: #F9F6EC;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 60px;
+    text-align: center;
+}
+
+.complete-btn {
+    background-color: #A7E8BD;
+    border: 1px solid #A7E8BD;
+}
+
+.edit-btn {
+    background-color: #FFC885;
+    border: 1px solid #FFC885;
+}
+
+.delete-btn {
+    background-color: #DCE3ED;
+    border: 1px solid #DCE3ED;
+}
 /*----------------------------------------------------Navbar styling*/
 
 .logo-design {

@@ -14,6 +14,9 @@
             {% if task.complete == False %}
             <ul>
                 <li>{{task.task_title}}
+                    <a class="btn task-btn complete-btn" href="{{url_for('new_task')}}">Complete</a>
+                    <a class="btn task-btn edit-btn" href="{{url_for('new_task')}}">Edit</a>
+                    <a class="btn task-btn delete-btn" href="{{url_for('new_task')}}">Delete</a>
                     <ul>
                         <li>{{task.task_info}}</li>
                         <li>{{task.delegation}}</li>

@@ -44,6 +44,9 @@ def tips():
 def sign_in():
     if request.method == "GET":
         # This simply returns to html page if the request is 'GET'
+        if 'username' in session:
+            return redirect(url_for('overview'))
+
         return render_template('signin.html')
     # If 'POST', this checks the returning user's details to see if they match what is stored in the DB
     elif request.method == "POST":     

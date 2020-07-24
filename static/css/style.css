@@ -107,6 +107,17 @@ body {
     text-align: center;
 }
 
+.expand-btn {
+    background-color: #85ADD6;
+    border: 1px solid #85ADD6;
+}
+
+.expand-btn:hover {
+    background-color: #4785C2;
+    border: 1px solid #4785C2;
+    color: #F9F6EC;
+}
+
 .complete-btn {
     background-color: #A7E8BD;
     border: 1px solid #A7E8BD;

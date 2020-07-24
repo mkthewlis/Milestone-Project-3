@@ -11,17 +11,27 @@
         <div class="col">
             <h4 class="smaller-heading"> Pending tasks: </h4>
             {% for task in tasks %}
-            {% if (task.complete == False) and  (task.username == session.username) %}
+            {% if (task.complete == False) and (task.username == session.username) %}
             <ul>
-                <li>{{task.task_title}}
-                    <a class="btn task-btn complete-btn" href="{{url_for('complete_task')}}">Complete</a>
-                    <a class="btn task-btn edit-btn" href="{{url_for('update_tasks')}}">Edit</a>
-                    <a class="btn task-btn delete-btn" href="{{url_for('delete_task')}}">Delete</a>
-                    <ul>
-                        <li>{{task.task_info}}</li>
-                        <li>{{task.delegation}}</li>
-                        <li>{{task.task_due}}</li>
-                    </ul>
+                <li>
+                    <p>
+                        <a class="btn task-btn expand-btn" data-toggle="collapse" href="#showTaskDetails" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Expand
+                        </a>
+                        <a class="btn task-btn complete-btn" href="{{url_for('complete_task')}}">Complete</a>
+                        <a class="btn task-btn edit-btn" href="{{url_for('update_tasks')}}">Edit</a>
+                        <a class="btn task-btn delete-btn" href="{{url_for('delete_task')}}">Delete</a>
+                    </p>
+                    <div class="collapse" id="showTaskDetails">
+                        <div class="card card-body">
+                            <ul>
+                                <li>{{task.task_info}}</li>
+                                <li>{{task.delegation}}</li>
+                                <li>{{task.task_due}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                {{task.task_title}}
                 </li>
             </ul>
             {% elif (task.complete == True) and  (task.username == session.username) %}
@@ -40,14 +50,10 @@
                     </ul>
                 </li>
             </ul>
-            {% endif %}
-            {% endfor %}
-            <!--For loop with if statement to print message if users don't have any tasks yet-->
-            {% for task in tasks %}
-            {% if task.username == session.username is none %}
+            {% elif task.username != session.username %}
             <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some below?</h4>
             {% endif %}
-            {% endfor %}          
+            {% endfor %}       
         </div>
     </div>
 </div>

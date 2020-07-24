@@ -58,6 +58,24 @@ body {
     line-height: 45px;
 }
 
+.list-title {
+    color: #3A2E39;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 23px;
+    line-height: 45px;
+}
+
+.list-text {
+    color: #3A2E39;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 30px;
+}
+
 /*----------------------------------------------------Button styling*/
 
 .standard-sign-up-btn {
@@ -117,11 +135,15 @@ body {
     font-weight: 500;
     min-width: 60px;
     text-align: center;
+    display: inline-block;
 }
 
 .expand-btn {
     background-color: #85ADD6;
     border: 1px solid #85ADD6;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    vertical-align: unset;
 }
 
 .expand-btn:hover {
@@ -242,11 +264,27 @@ ul {
     list-style-type: none;
 }
 
+ul p {
+    margin-bottom: 0px;
+}
+
+.card {
+    border: none;
+}
+
 .overview-image {
     height: 300px;
     max-width: 450px;
     padding-top: 0px;
     margin-top: 60px;
+}
+
+.task-display {
+    display: inline-block;
+}
+
+.fa-check:before {
+    margin-right: 10px;
 }
 
 /*----------------------------------------------------------------------------### END OF: overview.html ### */

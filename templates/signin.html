@@ -4,11 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h3 class="standard-heading">Good to see you again!</h3>
+            <h3 class="standard-heading form-margin-top">Good to see you again!</h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5 text-center">
+        <div class="col-12 col-md-6 text-center">
             <form method="POST" action="{{ url_for('sign_in') }}">
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
@@ -20,9 +20,9 @@
             </form>
             <br>
         </div>
-        <div class="col-md-5 text-center">
+        <div class="col-12 col-md-6 text-center">
             <div>
-                <h4>Don't have an account yet?</h4>
+                <h4 class="smaller-heading">Don't have an account yet?</h4>
                 <a class="btn standard-sign-up-btn" id="redirect-signup-btn" href="{{url_for('sign_up')}}">Sign Up</a>
             </div>
         </div>

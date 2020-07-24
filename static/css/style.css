@@ -33,6 +33,15 @@ body {
     line-height: 45px;
 }
 
+.smaller-heading {
+    color: #3A2E39;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 25px;
+    line-height: 45px;
+}
+
 /*----------------------------------------------------Button styling*/
 
 .standard-sign-up-btn {
@@ -46,16 +55,19 @@ body {
 
 .sign-in-btn {
     background-color: #A7E8BD;
-    border: 1px solid #F9F6EC;
+    border: 1px solid #A7E8BD;
     border-radius: 20px;
     font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
     font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 95px;
 }
 
 .sign-in-btn:hover {
-    background-color: #5DD585;
-    border: 1px solid #5DD585;
+    background-color: #7DDE9D;
+    border: 1px solid #7DDE9D;
 }
 
 #redirect-signup-btn {
@@ -135,6 +147,12 @@ body {
 }
 
 /*----------------------------------------------------------------------------### START OF: signin.html ### */
+
+.form-margin-top {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 
 /* Form control guidance courtesy of https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow */
 .form-control:focus{   

@@ -53,8 +53,9 @@ body {
     font-weight: 500;
 }
 
-.sign-in-btn {
+.sign-in-btn, #redirect-signin-btn {
     background-color: #A7E8BD;
+    color: #F9F6EC;
     border: 1px solid #A7E8BD;
     border-radius: 20px;
     font-family: 'Quicksand', sans-serif;
@@ -65,24 +66,24 @@ body {
     width: 95px;
 }
 
-.sign-in-btn:hover {
+.sign-in-btn:hover, #redirect-signin-btn:hover {
+    color: #F9F6EC;
     background-color: #7DDE9D;
     border: 1px solid #7DDE9D;
 }
 
-#redirect-signup-btn {
+#redirect-signup-btn, #form-signup-btn {
     text-decoration: none;
-
 }
 
-#nav-btn, #redirect-signup-btn {
+#nav-btn, #redirect-signup-btn, #form-signup-btn{
     color: #F9F6EC;
     padding-left: 10px;
     padding-right: 10px;
     width: 95px;
 }
 
-#nav-btn:hover, #redirect-signup-btn:hover {
+#nav-btn:hover, #redirect-signup-btn:hover, #form-signup-btn:hover {
     background-color: #E99B9D;
     color: #F9F6EC;
 }
@@ -156,9 +157,14 @@ body {
 
 /* Form control guidance courtesy of https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow */
 .form-control:focus{   
-  border-color: #A7E8BD;
-  box-shadow: 0 1px 1px #A7E8BD inset, 0 0 8px #A7E8BD;
-  outline: 0 none;
+    border-color: #A7E8BD;
+    box-shadow: 0 1px 1px #A7E8BD inset, 0 0 8px #A7E8BD;
+    outline: 0 none;
 }
 .has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
 
+.form-control-newuser:focus {
+    border-color: #EFB7B9;
+    box-shadow: 0 1px 1px #EFB7B9 inset, 0 0 8px #EFB7B9;
+    outline: 0 none;
+}

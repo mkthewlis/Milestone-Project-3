@@ -1,18 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-<h3>Hello there new user!</h3>
 
-<form method="POST" action="{{ url_for('sign_up') }}">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3 class="standard-heading form-margin-top">Great to have you onboard!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 text-center">
+            <form method="POST" action="{{ url_for('sign_up') }}">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" name="username" placeholder="Username" required>
+                    <input type="text" class="form-control form-control-newuser" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="pass" placeholder="Password" required>
+                    <input type="password" class="form-control form-control-newuser" name="pass" placeholder="Password" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <button type="submit" class="btn standard-sign-up-btn" id="form-signup-btn">Sign Up</button>
             </form>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <div>
+                <h4 class="smaller-heading">Already have an account?</h4>
+                <a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('sign_in')}}">Sign In</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

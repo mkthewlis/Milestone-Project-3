@@ -22,7 +22,7 @@ body {
 
 .standard-box {
     border: 6px solid #DCE3ED;
-    margin-top: 50px;
+    margin-bottom: 50px;
     padding-bottom: 10px;
 }
 
@@ -42,6 +42,11 @@ body {
     font-weight: 100;
     font-size: 30px;
     line-height: 45px;
+    text-align: center;
+}
+
+.index-heading {
+    text-align: left;
 }
 
 .smaller-heading {
@@ -95,7 +100,7 @@ body {
     width: 95px;
 }
 
-#nav-btn:hover, #redirect-signup-btn:hover, #form-signup-btn:hover, #sign-out-btn:hover {
+.standard-sign-up-btn:hover, #nav-btn:hover, #redirect-signup-btn:hover, #form-signup-btn:hover, #sign-out-btn:hover {
     background-color: #E99B9D;
     color: #F9F6EC;
 }
@@ -235,6 +240,13 @@ body {
 
 ul {
     list-style-type: none;
+}
+
+.overview-image {
+    height: 300px;
+    max-width: 450px;
+    padding-top: 0px;
+    margin-top: 60px;
 }
 
 /*----------------------------------------------------------------------------### END OF: overview.html ### */

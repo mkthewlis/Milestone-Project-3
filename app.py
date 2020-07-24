@@ -95,6 +95,20 @@ def new_task():
     return render_template('newtasks.html')
 
 
+@app.route('/update_tasks')
+def update_tasks():
+    return render_template('updatetasks.html')
+
+
+@app.route('/complete_task')
+def complete_task():
+    return ''
+
+
+@app.route('/delete_task')
+def delete_task():
+    return ''
+
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

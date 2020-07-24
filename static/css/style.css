@@ -88,7 +88,7 @@ body {
     font-weight: 500;
 }
 
-.sign-in-btn, #redirect-signin-btn {
+.sign-in-btn {
     background-color: #A7E8BD;
     color: #F9F6EC;
     border: 1px solid #A7E8BD;
@@ -99,6 +99,10 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     width: 95px;
+}
+
+#redirect-signin-btn {
+    width: 125px;
 }
 
 .sign-in-btn:hover, #redirect-signin-btn:hover {
@@ -285,6 +289,10 @@ ul p {
 
 .fa-check:before {
     margin-right: 10px;
+}
+
+.complete-tasks {
+    color: #A7E8BD;
 }
 
 /*----------------------------------------------------------------------------### END OF: overview.html ### */

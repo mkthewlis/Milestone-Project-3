@@ -30,7 +30,7 @@
                             <a class="nav-link" href="{{url_for('overview')}}">My Tasks</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="{{url_for('logout')}}">Sign Out</a>
+                            <a class="nav-link standard-sign-up-btn" id="sign-out-btn" href="{{url_for('logout')}}">Sign Out</a>
                         </li>
                         {% endif %}
                         {% if not session.username %}

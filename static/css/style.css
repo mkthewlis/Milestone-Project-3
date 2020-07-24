@@ -81,16 +81,20 @@ body {
     text-decoration: none;
 }
 
-#nav-btn, #redirect-signup-btn, #form-signup-btn{
+#nav-btn, #redirect-signup-btn, #form-signup-btn, #sign-out-btn{
     color: #F9F6EC;
     padding-left: 10px;
     padding-right: 10px;
     width: 95px;
 }
 
-#nav-btn:hover, #redirect-signup-btn:hover, #form-signup-btn:hover {
+#nav-btn:hover, #redirect-signup-btn:hover, #form-signup-btn:hover, #sign-out-btn:hover {
     background-color: #E99B9D;
     color: #F9F6EC;
+}
+
+#sign-out-btn {
+    width: 103px;
 }
 
 .task-btn {
@@ -108,14 +112,32 @@ body {
     border: 1px solid #A7E8BD;
 }
 
+.complete-btn:hover {
+    background-color: #7DDE9D;
+    border: 1px solid #7DDE9D;
+    color: #F9F6EC;
+}
+
 .edit-btn {
     background-color: #FFC885;
     border: 1px solid #FFC885;
 }
 
+.edit-btn:hover {
+    background-color: #FFB65C;
+    border: 1px solid #FFB65C;
+    color: #F9F6EC;
+}
+
 .delete-btn {
     background-color: #DCE3ED;
     border: 1px solid #DCE3ED;
+}
+
+.delete-btn:hover {
+    background-color: #BCC9DC;
+    border: 1px solid #BCC9DC;
+    color: #F9F6EC;
 }
 /*----------------------------------------------------Navbar styling*/
 

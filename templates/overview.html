@@ -9,19 +9,19 @@
     <!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
     <div class="row">
         <div class="col">
-            <h4 class="smaller-heading"> Pending tasks: </h4>
             {% for task in tasks %}
             {% if (task.complete == False) and (task.username == session.username) %}
+            <h4 class="smaller-heading"> Pending tasks: </h4>
             <ul>
                 <li>
-                    <p id="listGroup">
+                    <div>
                         <a class="btn task-btn expand-btn" data-toggle="collapse" href="#showTaskDetails" role="button" aria-expanded="false" aria-controls="collapseExample">
                         Expand
                         </a>
                         <a class="btn task-btn complete-btn" href="{{url_for('complete_task')}}">Complete</a>
                         <a class="btn task-btn edit-btn" href="{{url_for('update_tasks')}}">Edit</a>
                         <a class="btn task-btn delete-btn" href="{{url_for('delete_task')}}">Delete</a>
-                    </p>
+                    </div>
                     <div class="collapse" id="showTaskDetails">
                         <div class="card card-body">
                             <ul>
@@ -53,7 +53,7 @@
             {% elif task.username != session.username %}
             <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some below?</h4>
             {% endif %}
-            {% endfor %}       
+            {% endfor %}     
         </div>
     </div>
 </div>
@@ -72,4 +72,26 @@
         </div>
     </div>
 </div>
+                <!-- Alternative option pending
+                    <div class="accordion" id="accordionExample">
+                            {% for task in tasks %}
+                            {% if (task.complete == False) and (task.username == session.username) %}
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {{task.task_title}}
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %} -->
+
 {% endblock %}
+

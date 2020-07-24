@@ -1,7 +1,6 @@
 //Only runs function when page is ready
 $(document).ready(function(){
-    $('.expand-btn').click(function(){
-        //$(this).siblings().fadeOut('300');
-    });
-
+    //$('.expand-btn').click(function(){
+        //$(".btn-container").find((".expand-btn").not($(this)).addClass(".collapse"));
+    //});
 });

@@ -9,7 +9,7 @@
     <!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
     <div class="row">
         <div class="col">
-            <h4> Pending tasks: </h4>
+            <h4 class="smaller-heading"> Pending tasks: </h4>
             {% for task in tasks %}
             {% if task.complete == False %}
             <ul>
@@ -26,7 +26,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <h4> Completed tasks: </h4>
+            <h4 class="smaller-heading"> Completed tasks: </h4>
             <ul>
                 <li>{{task.task_title}}
                     <ul>
@@ -43,11 +43,16 @@
 </div>
 <div class="container">
     <div class="row">
+        <div class="col-md-12 text-center">
+            <h4 class="smaller-heading">Thought of something else to add?</h4>   
+            <a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('new_task')}}">Add new task</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
         <div class="col-12 text-center">
-            <div>
-                <h4 class="smaller-heading">Thought of something else to add?</h4>
-                <a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('new_task')}}">Add new task</a>
-            </div>
+            <img class="main-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
         </div>
     </div>
 </div>

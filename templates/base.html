@@ -24,9 +24,20 @@
                         <li class="nav-item mr-2">
                             <a class="nav-link" href="{{url_for('tips')}}">Top Tips</a>
                         </li>
+                        <!--Changes the navbar if a user is logged in-->
+                        {% if session.username %}
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="{{url_for('overview')}}">My Tasks</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="{{url_for('logout')}}">Sign Out</a>
+                        </li>
+                        {% endif %}
+                        {% if not session.username %}
                         <li class="nav-item mr-2">
                             <a class="nav-link" href="{{url_for('sign_in')}}">Sign In</a>
                         </li>
+                        {% endif %}
                         <li class="nav-item mr-2">
                             <a class="nav-link standard-sign-up-btn" id="nav-btn" href="{{url_for('sign_up')}}">Sign Up</a>
                         </li>

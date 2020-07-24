@@ -38,15 +38,16 @@
             </ul>
             {% endif %}
             {% endfor %}
-
-            <!-- Previous code that worked:
-            {% for task in tasks %}
-                {{task.task_title}}
-                {{task.task_info}}
-                {{task.delegation}}
-                {{task.task_due}}
-            {% endfor %}
-            -->
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div>
+                <h4 class="smaller-heading">Thought of something else to add?</h4>
+                <a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('new_task')}}">Add new task</a>
+            </div>
         </div>
     </div>
 </div>

@@ -90,6 +90,12 @@ def logout():
     return redirect(url_for('sign_in'))
 
 
+@app.route('/new_task')
+def new_task():
+    return render_template('newtasks.html')
+
+
+
 if __name__ == '__main__':
     app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),

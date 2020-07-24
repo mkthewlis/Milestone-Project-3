@@ -11,16 +11,33 @@
         <div class="col">
             <h4> Pending tasks: </h4>
             {% for task in tasks %}
-                <li>{{task.task_title}}</li>
-                <li>{{task.task_info}}</li>
-                {{task.delegation}}
-                {{task.task_due}}
-            {% endfor %}
+            {% if task.complete == False %}
+            <ul>
+                <li>{{task.task_title}}
+                    <ul>
+                        <li>{{task.task_info}}</li>
+                        <li>{{task.delegation}}</li>
+                        <li>{{task.task_due}}</li>
+                    </ul>
+                </li>
+            </ul>
+            {% else %}
         </div>
     </div>
     <div class="row">
         <div class="col">
             <h4> Completed tasks: </h4>
+            <ul>
+                <li>{{task.task_title}}
+                    <ul>
+                        <li>{{task.task_info}}</li>
+                        <li>{{task.delegation}}</li>
+                        <li>{{task.task_due}}</li>
+                    </ul>
+                </li>
+            </ul>
+            {% endif %}
+            {% endfor %}
 
             <!-- Previous code that worked:
             {% for task in tasks %}

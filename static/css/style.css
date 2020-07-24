@@ -143,17 +143,15 @@ body {
 }
 
 .expand-btn {
-    background-color: #85ADD6;
-    border: 1px solid #85ADD6;
+    color: #85ADD6;
     padding-top: 3px;
     padding-bottom: 3px;
     vertical-align: unset;
+    font-size: 25px;
 }
 
 .expand-btn:hover {
-    background-color: #4785C2;
-    border: 1px solid #4785C2;
-    color: #F9F6EC;
+    color: #4785C2;
 }
 
 .complete-btn {
@@ -287,13 +285,16 @@ ul p {
     display: inline-block;
 }
 
-.fa-check:before {
+.fa-check:before, .fa-chevron-down:before {
     margin-right: 10px;
 }
 
 .complete-tasks {
     color: #A7E8BD;
+    font-size: 25px;
 }
+
+
 
 /*----------------------------------------------------------------------------### END OF: overview.html ### */
 /*----------------------------------------------------------------------------### START OF: newtasks.html ### */

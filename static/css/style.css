@@ -39,7 +39,42 @@ body {
     background-color: #EFB7B9;
     border: 1px solid #F9F6EC;
     border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
 }
+
+.sign-in-btn {
+    background-color: #A7E8BD;
+    border: 1px solid #F9F6EC;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sign-in-btn:hover {
+    background-color: #5DD585;
+    border: 1px solid #5DD585;
+}
+
+#redirect-signup-btn {
+    text-decoration: none;
+
+}
+
+#nav-btn, #redirect-signup-btn {
+    color: #F9F6EC;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 95px;
+}
+
+#nav-btn:hover, #redirect-signup-btn:hover {
+    background-color: #E99B9D;
+    color: #F9F6EC;
+}
+
 /*----------------------------------------------------Navbar styling*/
 
 .logo-design {
@@ -72,18 +107,6 @@ body {
     color: #EFB7B9;
 }
 
-#nav-btn {
-    color: #F9F6EC;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 95px;
-}
-
-#nav-btn:hover {
-    background-color: #E99B9D;
-    color: #F9F6EC;
-}
-
 /*----------------------------------------------------Footer styling*/
 
 /*----------------------------------------------------------------------------### END OF: General project styles ### */
@@ -110,3 +133,14 @@ body {
     height: 500px;
     width: 600px;
 }
+
+/*----------------------------------------------------------------------------### START OF: signin.html ### */
+
+/* Form control guidance courtesy of https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow */
+.form-control:focus{   
+  border-color: #A7E8BD;
+  box-shadow: 0 1px 1px #A7E8BD inset, 0 0 8px #A7E8BD;
+  outline: 0 none;
+}
+.has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+

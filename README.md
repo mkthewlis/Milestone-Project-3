@@ -17,3 +17,4 @@ The deployed version of this project can be viewed here: https://ms3-move-on.her
 - Coolors - colour picker https://coolors.co/a7e8bd-dce3ed-f6fdf8-f9f6ec-efb7b9-3a2e39
 - UnDraw - source of all cartoon images https://undraw.co/search
 - Design inspiration - https://www.checkli.com/ and https://monday.com/ 
+- Change form colors when active https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow

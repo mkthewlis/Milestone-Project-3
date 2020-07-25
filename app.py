@@ -95,16 +95,16 @@ def logout():
 
 @app.route('/new_task')
 def new_task():
-    return render_template('newtasks.html', tasks=mongo.db.tasks.find())
+    return render_template('newtasks.html')
 
 
 # Code below courtesy of Code Institute module, as I learned with this repository: https://github.com/mkthewlis/task_manager_app
-@app.route('/add_task', methods=['GET', 'POST'])
+@app.route('/add_task', methods=['POST'])
 def add_task():
     tasks = mongo.db.tasks
     tasks.insert_one(request.form.to_dict())
 
-    return redirect(url_for('new_task'), task_name=task_name, task_info=task_info, delegation=delegation, due_date=due_date)
+    return redirect(url_for('new_task'))
 
 
 @app.route('/update_tasks')

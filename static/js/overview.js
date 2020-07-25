@@ -1,3 +1,4 @@
+  
 //Only runs function when page is ready
 $(document).ready(function(){
     //$('.expand-btn').click(function(){

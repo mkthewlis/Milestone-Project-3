@@ -11,7 +11,7 @@
         <div class="col-12 col-md-6 text-center">
             <form action="{{ url_for('add_task') }}" method="POST">
                 <div class="form-group">
-                    <input id="task_name" name="task_name" type="text" class="form-control" placeholder="Task Name" required>
+                    <input id="task_title" name="task_title" type="text" class="form-control" placeholder="Task Name" required>
                 </div>
                 <div class="form-group">
                     <input id="task_info" name="task_info" type="text" class="form-control" placeholder="Extra Information" required>
@@ -20,7 +20,7 @@
                     <input id="delegation" name="delegation" type="text" class="form-control" placeholder="Delegated to" required>
                 </div>
                 <div class="form-group">
-                    <input id="due_date" name="due_date" type="text" class="form-control" placeholder="Due Date" required>
+                    <input id="task_due" name="task_due" type="text" class="form-control" placeholder="Due Date" required>
                 </div>
                 <input class="task-btn sign-in-btn title-margin-top" type="submit" value="Add Task">
             </form>

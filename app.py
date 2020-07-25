@@ -92,17 +92,26 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('sign_in'))
 
-
+# Directs to page to add new tasks
 @app.route('/new_task')
 def new_task():
     return render_template('newtasks.html')
 
 
-# Code below courtesy of Code Institute module, as I learned with this repository: https://github.com/mkthewlis/task_manager_app
+# Code below inspired by Code Institute module, as I learned with this repository: https://github.com/mkthewlis/task_manager_app
 @app.route('/add_task', methods=['POST'])
 def add_task():
     tasks = mongo.db.tasks
-    tasks.insert_one(request.form.to_dict())
+    username = session['username']
+    form_data = {
+        "username": username,
+        "task_title": request.form.get("task_title"),
+        "task_info": request.form.get("task_info"),
+        "delegation": request.form.get("delegation"),
+        "task_due": request.form.get("task_due"),
+        "complete": False,
+    }
+    tasks.insert_one(form_data)
 
     return redirect(url_for('new_task'))
 

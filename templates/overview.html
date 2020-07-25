@@ -48,7 +48,7 @@
                 </li>
             </ul>
             {% elif (task.complete == True) and  (task.username == session.username) %}
-        <h4 class="smaller-heading"><strong> Completed tasks: </strong></h4>
+            <h4 class="smaller-heading"><strong> Completed tasks: </strong></h4>
             <ul>
                 <li class="list-text"><i class="fas fa-check complete-tasks"></i>{{task.task_title}}
                 </li>
@@ -56,7 +56,7 @@
             {% elif task.username != session.username %}
             <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
             {% endif %}
-            {% endfor %}     
+            {% endfor %}
         </div>
         <div class="col-12 col-md-6 text-center">
             <img class="overview-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />

@@ -64,6 +64,9 @@ def sign_in():
 # Routing that shows the users overview/ dashboard when they have logged in or registered
 @app.route('/overview', methods=['GET', 'POST'])
 def overview():
+    if 'username' not in session:
+        return render_template('signup.html')
+
     return render_template('overview.html', tasks=mongo.db.tasks.find())
 
 
@@ -95,6 +98,9 @@ def logout():
 # Directs to page to add new tasks
 @app.route('/new_task')
 def new_task():
+    if 'username' not in session:
+        return render_template('signup.html')
+
     return render_template('newtasks.html')
 
 
@@ -118,6 +124,9 @@ def add_task():
 
 @app.route('/update_tasks')
 def update_tasks():
+    if 'username' not in session:
+        return render_template('signup.html')
+
     return render_template('updatetasks.html')
 
 

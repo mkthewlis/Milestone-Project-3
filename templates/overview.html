@@ -55,11 +55,11 @@
                         <li class="list-text"><i class="fas fa-check complete-tasks"></i>{{task.task_title}}
                         </li>
                     </ul>
-            {% elif task.username != session.username %}
-                <!-- insert your message about "No Tasks" - get started message -->
-                <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
-            {% endif %}
-            {% endfor %}
+                    {% elif task.username != session.username %}
+                    <!-- insert your message about "No Tasks" - get started message -->
+                    <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
+                    {% endif %}
+                {% endfor %}
             {% endif %}
 {% endblock %}
 

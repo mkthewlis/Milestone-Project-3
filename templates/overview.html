@@ -20,71 +20,46 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <h4 class="smaller-heading"><strong>Pending tasks: </strong></h4>
-            {% for task in tasks %}
-            {% if (task.complete == False) and (task.username == session.username) %}
-            <ul>
-                <li>
-                    <div class="task-display">
-                      <a class="btn" data-toggle="collapse" href="#collapseTask" role="button" aria-expanded="false" aria-controls="collapseTask">
-                        <i class="fas fa-chevron-down expand-btn"></i>
-                        </a>
-                    </div>
-                    <div class="task-display list-title">
-                        <p>{{task.task_title}}</p>
-                    </div>
-                    <div class="collapse" id="collapseTask">
-                        <div class="card card-body">
-                            <ul class="list-text">
-                                <li><strong>Extra information:</strong> {{task.task_info}}</li>
-                                <li><strong>Delegated to:</strong> {{task.delegation}}</li>
-                                <li><strong>Due date:</strong> {{task.task_due}}</li>
-                                <a class="btn task-btn complete-btn" href="{{url_for('complete_task')}}">Complete</a>
-                                <a class="btn task-btn edit-btn" href="{{url_for('update_tasks')}}">Edit</a>
-                                <a class="btn task-btn delete-btn" href="{{url_for('delete_task')}}">Delete</a>
-                            </ul>
-                        </div>
-                    </div>
+            {% if tasks|length > 0 %}
+                <!-- insert the for-loop here -->
+                {% for task in tasks %}
+                    {% if not task.complete %}
+                    <ul>
+                        <li>
+                            <div class="task-display">
+                            <a class="btn" data-toggle="collapse" href="#collapseTask" role="button" aria-expanded="false" aria-controls="collapseTask">
+                                <i class="fas fa-chevron-down expand-btn"></i>
+                                </a>
+                            </div>
+                            <div class="task-display list-title">
+                                <p>{{task.task_title}}</p>
+                            </div>
+                            <div class="collapse" id="collapseTask">
+                                <div class="card card-body">
+                                    <ul class="list-text">
+                                        <li><strong>Extra information:</strong> {{task.task_info}}</li>
+                                        <li><strong>Delegated to:</strong> {{task.delegation}}</li>
+                                        <li><strong>Due date:</strong> {{task.task_due}}</li>
+                                        <a class="btn task-btn complete-btn" href="{{url_for('complete_task', task_id=task_id)}}">Complete</a>
+                                        <a class="btn task-btn edit-btn" href="{{url_for('update_tasks')}}">Edit</a>
+                                        <a class="btn task-btn delete-btn" href="{{url_for('delete_task')}}">Delete</a>
+                                    </ul>
+                                </div>
+                            </div>
 
-                </li>
-            </ul>
-            {% elif (task.complete == True) and  (task.username == session.username) %}
-            <h4 class="smaller-heading"><strong> Completed tasks: </strong></h4>
-            <ul>
-                <li class="list-text"><i class="fas fa-check complete-tasks"></i>{{task.task_title}}
-                </li>
-            </ul>
+                        </li>
+                    </ul>
+                    {% elif task.complete %}
+                    <h4 class="smaller-heading"><strong> Completed tasks: </strong></h4>
+                    <ul>
+                        <li class="list-text"><i class="fas fa-check complete-tasks"></i>{{task.task_title}}
+                        </li>
+                    </ul>
             {% elif task.username != session.username %}
-            <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
+                <!-- insert your message about "No Tasks" - get started message -->
+                <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
             {% endif %}
             {% endfor %}
-        </div>
-        <div class="col-12 col-md-6 text-center">
-            <img class="overview-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
-        </div>
-    </div>
-</div>
-
-
-                <!-- Alternative option pending
-                    <div class="accordion" id="accordionExample">
-                            {% for task in tasks %}
-                            {% if (task.complete == False) and (task.username == session.username) %}
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                {{task.task_title}}
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %} -->
-
+            {% endif %}
 {% endblock %}
 

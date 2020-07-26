@@ -67,7 +67,9 @@ def overview():
     if 'username' not in session:
         return render_template('signup.html')
 
-    return render_template('overview.html', tasks=mongo.db.tasks.find())
+    tasks = list(mongo.db.tasks.find({"username": session["username"]}))
+
+    return render_template('overview.html', tasks=tasks)
 
 
 # Routing for new users to sign up, hashing the password for security
@@ -115,7 +117,7 @@ def add_task():
         "task_info": request.form.get("task_info"),
         "delegation": request.form.get("delegation"),
         "task_due": request.form.get("task_due"),
-        "complete": False,
+        "complete": False
     }
     tasks.insert_one(form_data)
 
@@ -130,9 +132,13 @@ def update_tasks():
     return render_template('updatetasks.html')
 
 
-@app.route('/complete_task')
-def complete_task():
-    return ''
+@app.route('/complete_task/<task_id>', methods=['POST', 'GET'])
+def complete_task(task_id):
+    mongo.db.tasks.update(
+        {'_id': ObjectId(task_id)},
+        {"complete": True})
+
+    return redirect(url_for('overview'))
 
 
 @app.route('/delete_task')

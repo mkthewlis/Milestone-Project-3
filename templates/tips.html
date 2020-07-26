@@ -1,3 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
+            {% if tasks|length > 0 %}
+                <!-- insert the for-loop here -->
+                {% for task in tasks %}
+                    {% if not task.complete %}
+                    <ul>
+                        <li>
+                            <div class="task-display">
+                            <a class="btn" data-toggle="collapse" href="#collapseTask" role="button" aria-expanded="false" aria-controls="collapseTask">
+                                <i class="fas fa-chevron-down expand-btn"></i>
+                                </a>
+                            </div>
+                            <div class="task-display list-title">
+                                <p>{{task.task_title}}</p>
+                            </div>
+                            <div class="collapse" id="collapseTask">
+                                <div class="card card-body">
+                                    <ul class="list-text">
+                                        <li><strong>Extra information:</strong> {{task.task_info}}</li>
+                                        <li><strong>Delegated to:</strong> {{task.delegation}}</li>
+                                        <li><strong>Due date:</strong> {{task.task_due}}</li>
+                                        <a class="btn task-btn complete-btn" href="{{url_for('complete_task')}}">Complete</a>
+                                        <a class="btn task-btn edit-btn" href="{{url_for('update_tasks')}}">Edit</a>
+                                        <a class="btn task-btn delete-btn" href="{{url_for('delete_task')}}">Delete</a>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                    {% elif task.complete %}
+                    <h4 class="smaller-heading"><strong> Completed tasks: </strong></h4>
+                    <ul>
+                        <li class="list-text"><i class="fas fa-check complete-tasks"></i>{{task.task_title}}
+                        </li>
+                    </ul>
+            {% else %}
+                <!-- insert your message about "No Tasks" - get started message -->
+                <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
 {% endblock %}

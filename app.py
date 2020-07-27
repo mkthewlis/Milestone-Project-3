@@ -123,16 +123,17 @@ def add_task():
     }
     tasks.insert_one(form_data)
 
-
     return redirect(url_for('new_task'))
 
 
-@app.route('/update_tasks')
-def update_tasks():
+@app.route('/update_tasks/<task_id>', methods=['POST', 'GET'])
+def update_tasks(task_id):
     if 'username' not in session:
         return render_template('signup.html')
+    #Finds the task with matching id
+    updating_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
 
-    return render_template('updatetasks.html')
+    return render_template('updatetasks.html', task=updating_task)
 
 
 @app.route('/complete_task/<task_id>', methods=['POST', 'GET'])

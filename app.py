@@ -67,7 +67,10 @@ def overview():
     if 'username' not in session:
         return render_template('signup.html')
 
-    tasks = list(mongo.db.tasks.find({"username": session["username"]}))
+    else:
+        tasks = list(mongo.db.tasks.find({"username": session["username"]}))
+        if not tasks:
+            return render_template('overview.html', empty_list='It looks like your to do list is empty! Why not add some now?')
 
     return render_template('overview.html', tasks=tasks)
 

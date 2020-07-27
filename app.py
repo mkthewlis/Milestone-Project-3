@@ -131,7 +131,7 @@ def new_task():
 
 """ Code below inspired by Code Institute module, as I learned with this repository: 
 https://github.com/mkthewlis/task_manager_app """
-@app.route('/add_task',methods=['POST'])
+@app.route('/add_task', methods=['POST'])
 def add_task():
     tasks = mongo.db.tasks
     username = session['username']
@@ -148,16 +148,28 @@ def add_task():
     return redirect(url_for('new_task'))
 
 
+# Source used for reference for this function: https://kb.objectrocket.com/mongo-db/how-to-update-a-mongodb-document-in-python-356
+
 @app.route('/update_tasks/<task_id>', methods=['POST', 'GET'])
 def update_tasks(task_id):
     if 'username' not in session:
         return render_template('signup.html')
     #Finds the task with matching id
-    updating_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    username = session['username']
 
+    updating_task = mongo.db.tasks.find_one_and_update({"_id": ObjectId(task_id)}, 
+    {"$set":
+        {"username": username,
+        "task_title": request.form.get("task_title"),
+        "task_info": request.form.get("task_info"),
+        "delegation": request.form.get("delegation"),
+        "task_due": request.form.get("task_due"),
+        "complete": False}
+    })
     return render_template('updatetasks.html', task=updating_task)
 
 
+# Function to update tasks to move them to 'complete tasks' list
 @app.route('/complete_task/<task_id>', methods=['POST', 'GET'])
 def complete_task(task_id):
 

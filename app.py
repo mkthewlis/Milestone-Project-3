@@ -110,6 +110,8 @@ def sign_up():
 
     return render_template('signup.html')
 
+
+
 # Function to logout existing users
 @app.route('/logout')
 def logout():
@@ -129,7 +131,7 @@ def new_task():
 
 """ Code below inspired by Code Institute module, as I learned with this repository: 
 https://github.com/mkthewlis/task_manager_app """
-@app.route('/add_task', methods=['POST'])
+@app.route('/add_task',methods=['POST'])
 def add_task():
     tasks = mongo.db.tasks
     username = session['username']

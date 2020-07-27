@@ -62,9 +62,9 @@
 		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
 		{% for complete in completed %}
             <div class="task-display list-title">
-                <p>{{complete.task_title}}</p>
+                <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}}</p>
             </div>
-            <br> <!-- just testing purposes -->
+            <br>
 		{% endfor %}
 	</div>
 </div>

@@ -292,6 +292,7 @@ ul p {
 .complete-tasks {
     color: #A7E8BD;
     font-size: 25px;
+    padding-left: 50px;
 }
 
 
@@ -303,4 +304,5 @@ ul p {
     height: 400px;
     max-width: 400px;
     padding-top: 0px;
+    float: right;
 }

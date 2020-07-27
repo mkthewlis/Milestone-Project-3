@@ -26,7 +26,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col">
+	<div class="col-12 col-lg-6">
 		{% for task in tasks %}
             {% if not task.complete %}
                 <ul>
@@ -57,8 +57,7 @@
 		{% endfor %}
 	</div>
 </div>
-<div class="row">
-	<div class="col">
+	<div class="col-12 col-lg-6">
 		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
 		{% for complete in completed %}
             <div class="task-display list-title">
@@ -67,8 +66,8 @@
             <br>
 		{% endfor %}
 	</div>
-</div>
-<div class="col-4 col-md-6">
+
+<div class="col-6">
 	<img class="overview-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
 </div>
 {% endblock %}

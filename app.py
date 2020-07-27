@@ -123,6 +123,7 @@ def add_task():
     }
     tasks.insert_one(form_data)
 
+
     return redirect(url_for('new_task'))
 
 

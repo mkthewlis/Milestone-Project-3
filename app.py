@@ -68,15 +68,26 @@ def overview():
         return render_template('signup.html')
 
     tasks = list(mongo.db.tasks.find({"username": session["username"]}))
-    completed = list(mongo.db.tasks.find({"username": session["username"], "complete": True}))
+    completed = []  # empty list, so we don't make two calls to the db
 
-    if tasks: 
-        return render_template('overview.html', pending_tasks=
-        'Pending tasks:', completed_tasks='Complete tasks:', 
-        tasks=tasks)
+    if tasks:
+        for task in tasks:
+            if task["complete"]:
+                completed.append(task)  # if completed=True, add to list above
+        return render_template(
+                                'overview.html',
+                                pending_tasks='Pending tasks:',
+                                completed_tasks='Complete tasks:',
+                                tasks=tasks,
+                                completed=completed)
 
     elif not tasks:
-        return render_template('overview.html', empty_list='It looks like your to do list is empty! Why not get started by adding some tasks now?', tasks=tasks)
+        empty_list = 'It looks like your to do list is empty!\
+                    Why not get started by adding some tasks now?'
+        return render_template(
+                                'overview.html',
+                                empty_list=empty_list,
+                                tasks=tasks)
 
     return render_template('overview.html', tasks=tasks, completed=completed)
 
@@ -150,7 +161,12 @@ def update_tasks(task_id):
 def complete_task(task_id):
     mongo.db.tasks.update(
         {'_id': ObjectId(task_id)},
-        {"complete": True})
+        {"username": session['username'],
+        "task_title": request.form.get("task_title"),
+        "task_info": request.form.get("task_info"),
+        "delegation": request.form.get("delegation"),
+        "task_due": request.form.get("task_due"),
+        "complete": True})
 
     return redirect(url_for('overview'))
 

@@ -1,74 +1,74 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h3 class="standard-heading title-margin-top">Welcome {{ session.username }}! <br> Here's an overview of your moving tasks</h3>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col">
+			<h3 class="standard-heading title-margin-top">Welcome {{ session.username }}! <br> Here's an overview of your moving tasks</h3>
+		</div>
+	</div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 text-center standard-box">
-            <h4 class="smaller-heading">Thought of a new task to add?</h4>   
-            <a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('new_task')}}">Add new task</a>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-md-12 text-center standard-box">
+			<h4 class="smaller-heading">Thought of a new task to add?</h4>
+			<a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('new_task')}}">Add new task</a>
+		</div>
+	</div>
 </div>
 <div class="container">
-    <!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
-    <div class="row">
-        <div class="col-12 text-center">
-            <h4 class="smaller-heading"><strong> {{ empty_list | safe }} </strong></h4>
-        </div>
-        <div class="col-12">
-            <h4 class="smaller-heading"><strong>{{ pending_tasks| safe }} </strong></h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            {% for task in tasks %}
+<!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
+<div class="row">
+	<div class="col-12 text-center">
+		<h4 class="smaller-heading"><strong> {{ empty_list | safe }} </strong></h4>
+	</div>
+	<div class="col-12">
+		<h4 class="smaller-heading"><strong>{{ pending_tasks| safe }} </strong></h4>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		{% for task in tasks %}
             {% if not task.complete %}
-            <ul>
-                <li>
-                    <div class="task-display">
-                        <a class="btn" data-toggle="collapse" href="#collapseTask" role="button" aria-expanded="false" aria-controls="collapseTask">
+                <ul>
+                    <li>
+                        <div class="task-display">
+                            <a class="btn" data-toggle="collapse" href="#collapseTask" role="button" aria-expanded="false" aria-controls="collapseTask">
                             <i class="fas fa-chevron-down expand-btn"></i>
-                        </a>
-                    </div>
-                    <div class="task-display list-title">
-                        <p>{{task.task_title}}</p>
-                    </div>
-                    <div class="collapse" id="collapseTask">
-                        <div class="card card-body">
-                            <ul class="list-text">
-                                <li><strong>Extra information:</strong> {{task.task_info}}</li>
-                                <li><strong>Delegated to:</strong> {{task.delegation}}</li>
-                                <li><strong>Due date:</strong> {{task.task_due}}</li>
-                                <a class="btn task-btn complete-btn" href="{{url_for('complete_task', task_id=task._id)}}">Complete</a>
-                                <a class="btn task-btn edit-btn" href="{{url_for('update_tasks', task_id=task._id)}}">Edit</a>
-                                <a class="btn task-btn delete-btn" href="{{url_for('delete_task', task_id=task._id)}}">Delete</a>
-                            </ul>
+                            </a>
                         </div>
-                    </div>
-                </li>
-            </ul>
-    {% endif %}
-    {% endfor %}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h4 class="smaller-heading"><strong>{{ completed_tasks| safe }} </strong></h4>
-            {% for complete in completed %}
+                        <div class="task-display list-title">
+                            <p>{{task.task_title}}</p>
+                        </div>
+                        <div class="collapse" id="collapseTask">
+                            <div class="card card-body">
+                                <ul class="list-text">
+                                    <li><strong>Extra information:</strong> {{task.task_info}}</li>
+                                    <li><strong>Delegated to:</strong> {{task.delegation}}</li>
+                                    <li><strong>Due date:</strong> {{task.task_due}}</li>
+                                    <a class="btn task-btn complete-btn" href="{{url_for('complete_task', task_id=task._id)}}">Complete</a>
+                                    <a class="btn task-btn edit-btn" href="{{url_for('update_tasks', task_id=task._id)}}">Edit</a>
+                                    <a class="btn task-btn delete-btn" href="{{url_for('delete_task', task_id=task._id)}}">Delete</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            {% endif %}
+		{% endfor %}
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
+		{% for complete in completed %}
             <div class="task-display list-title">
                 <p>{{complete.task_title}}</p>
             </div>
-            {% endfor %}
-        </div>
-    </div>
-        <div class="col-4 col-md-6">
-            <img class="overview-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
-        </div>
+            <br> <!-- just testing purposes -->
+		{% endfor %}
+	</div>
+</div>
+<div class="col-4 col-md-6">
+	<img class="overview-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
+</div>
 {% endblock %}
-

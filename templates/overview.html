@@ -8,14 +8,6 @@
 	</div>
 </div>
 <div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center standard-box">
-			<h4 class="smaller-heading">Thought of a new task to add?</h4>
-			<a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('new_task')}}">Add new task</a>
-		</div>
-	</div>
-</div>
-<div class="container">
 <!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
     <div class="row">
 	    <div class="col-12 text-center">
@@ -24,8 +16,6 @@
 	    <div class="col-12">
 		    <h4 class="smaller-heading"><strong>{{ pending_tasks| safe }} </strong></h4>
 	    </div>
-    </div>
-    <div class="row">
 	    <div class="col-12 col-lg-6">
 		{% for task in tasks %}
             {% if not task.complete %}
@@ -57,13 +47,21 @@
 		{% endfor %}
 		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
 		{% for complete in completed %}
-            <div class="task-display list-title">
+            <div class="list-title extra-list-padding">
                 <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}}</p>
             </div>
 		{% endfor %}
     </div>
     <div class="col-12 col-lg-6">
-	    <img class="overview-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
+	    <img class="overview-image {{ image_position }}" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
     </div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center standard-box">
+			<h4 class="smaller-heading">Thought of a new task to add?</h4>
+			<a class="btn sign-in-btn" id="redirect-signin-btn" href="{{url_for('new_task')}}">Add new task</a>
+		</div>
+	</div>
 </div>
 {% endblock %}

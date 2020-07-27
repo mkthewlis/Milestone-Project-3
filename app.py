@@ -82,14 +82,17 @@ def overview():
                                 completed=completed)
 
     elif not tasks:
-        empty_list = 'It looks like your to do list is empty!\
+        empty_list = 'It looks like your moving list is empty!\
                     Why not get started by adding some tasks now?'
+        # Removes image until user has tasks
+        image_position = 'image_position'
         return render_template(
                                 'overview.html',
                                 empty_list=empty_list,
-                                tasks=tasks)
+                                tasks=tasks, 
+                                image_position=image_position)
 
-    return render_template('overview.html', tasks=tasks, completed=completed)
+    return render_template('overview.html', tasks=tasks, completed=completed, image_position=image_position)
 
 
 # Routing for new users to sign up, hashing the password for security
@@ -158,7 +161,7 @@ def update_tasks(task_id):
     username = session['username']
 
     updating_task = mongo.db.tasks.find_one_and_update({"_id": ObjectId(task_id)}, 
-    {"$set":
+        {"$set":
         {"username": username,
         "task_title": request.form.get("task_title"),
         "task_info": request.form.get("task_info"),
@@ -166,6 +169,7 @@ def update_tasks(task_id):
         "task_due": request.form.get("task_due"),
         "complete": False}
     })
+    
     return render_template('updatetasks.html', task=updating_task)
 
 

@@ -278,7 +278,7 @@ ul p {
     height: 300px;
     max-width: 450px;
     padding-top: 0px;
-    margin-top: 60px;
+    margin-top: 0px;
     float: right;
 }
 
@@ -293,9 +293,15 @@ ul p {
 .complete-tasks {
     color: #A7E8BD;
     font-size: 25px;
+}
+
+.extra-list-padding {
     padding-left: 50px;
 }
 
+.image_position {
+    display: none;
+}
 
 
 /*----------------------------------------------------------------------------### END OF: overview.html ### */

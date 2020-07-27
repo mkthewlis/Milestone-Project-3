@@ -20,7 +20,7 @@
                                         <li><strong>Extra information:</strong> {{task.task_info}}</li>
                                         <li><strong>Delegated to:</strong> {{task.delegation}}</li>
                                         <li><strong>Due date:</strong> {{task.task_due}}</li>
-                                        <a class="btn task-btn complete-btn" href="{{url_for('complete_task')}}">Complete</a>
+                                        <a class="btn task-btn complete-btn" href="{{url_for('complete_task', task_id=task_id)}}">Complete</a>
                                         <a class="btn task-btn edit-btn" href="{{url_for('update_tasks')}}">Edit</a>
                                         <a class="btn task-btn delete-btn" href="{{url_for('delete_task')}}">Delete</a>
                                     </ul>
@@ -35,11 +35,11 @@
                         <li class="list-text"><i class="fas fa-check complete-tasks"></i>{{task.task_title}}
                         </li>
                     </ul>
-            {% else %}
-                <!-- insert your message about "No Tasks" - get started message -->
-                <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
-            {% endif %}
-            {% endfor %}
+                    {% elif task.username != session.username %}
+                    <!-- insert your message about "No Tasks" - get started message -->
+                    <h4 class="smaller-heading"> It looks like you don't have any tasks yet! Why not get started by adding some right away?</h4>
+                    {% endif %}
+                {% endfor %}
             {% endif %}
 
 {% endblock %}

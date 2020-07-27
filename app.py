@@ -97,6 +97,7 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('sign_in'))
 
+
 # Directs to page to add new tasks
 @app.route('/new_task')
 def new_task():
@@ -106,7 +107,8 @@ def new_task():
     return render_template('newtasks.html')
 
 
-# Code below inspired by Code Institute module, as I learned with this repository: https://github.com/mkthewlis/task_manager_app
+""" Code below inspired by Code Institute module, as I learned with this repository: 
+https://github.com/mkthewlis/task_manager_app """
 @app.route('/add_task', methods=['POST'])
 def add_task():
     tasks = mongo.db.tasks
@@ -120,6 +122,7 @@ def add_task():
         "complete": False
     }
     tasks.insert_one(form_data)
+
 
     return redirect(url_for('new_task'))
 
@@ -141,9 +144,11 @@ def complete_task(task_id):
     return redirect(url_for('overview'))
 
 
-@app.route('/delete_task')
-def delete_task():
-    return ''
+@app.route('/delete_task/<task_id>')
+def delete_task(task_id):
+    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
+    #Redirects to task list so users see task is gone
+    return redirect(url_for('overview'))
 
 
 if __name__ == '__main__':

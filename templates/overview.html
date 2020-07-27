@@ -18,10 +18,15 @@
 <div class="container">
     <!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 text-center">
             <h4 class="smaller-heading"><strong> {{ empty_list | safe }} </strong></h4>
-            <h4 class="smaller-heading"><strong>{{ completed_tasks| safe }} </strong></h4>
+        </div>
+        <div class="col-12">
             <h4 class="smaller-heading"><strong>{{ pending_tasks| safe }} </strong></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             {% for task in tasks %}
             {% if not task.complete %}
             <ul>
@@ -48,8 +53,20 @@
                     </div>
                 </li>
             </ul>
-            {% endif %}
+    {% endif %}
+    {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h4 class="smaller-heading"><strong>{{ completed_tasks| safe }} </strong></h4>
+            {% for complete in completed %}
+            <div class="task-display list-title">
+                <p>{{complete.task_title}}</p>
+            </div>
             {% endfor %}
+        </div>
+    </div>
         <div class="col-4 col-md-6">
             <img class="overview-image" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
         </div>

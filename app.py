@@ -68,6 +68,7 @@ def overview():
         return render_template('signup.html')
 
     tasks = list(mongo.db.tasks.find({"username": session["username"]}))
+    completed = list(mongo.db.tasks.find({"username": session["username"], "complete": True}))
 
     if tasks: 
         return render_template('overview.html', pending_tasks=
@@ -75,9 +76,9 @@ def overview():
         tasks=tasks)
 
     elif not tasks:
-        return render_template('overview.html', empty_list='It looks like your to do list is empty! Why not add some now?', tasks=tasks)
+        return render_template('overview.html', empty_list='It looks like your to do list is empty! Why not get started by adding some tasks now?', tasks=tasks)
 
-    return render_template('overview.html', tasks=tasks)
+    return render_template('overview.html', tasks=tasks, completed=completed)
 
 
 # Routing for new users to sign up, hashing the password for security

@@ -145,7 +145,6 @@ def add_task():
     }
     tasks.insert_one(form_data)
 
-
     return redirect(url_for('new_task'))
 
 
@@ -154,21 +153,18 @@ def update_tasks(task_id):
     if 'username' not in session:
         return render_template('signup.html')
     #Finds the task with matching id
-    updating_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    updating_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
 
     return render_template('updatetasks.html', task=updating_task)
 
 
 @app.route('/complete_task/<task_id>', methods=['POST', 'GET'])
 def complete_task(task_id):
+
     mongo.db.tasks.update(
-        {'_id': ObjectId(task_id)},
-        {"username": session['username'],
-        "task_title": request.form.get("task_title"),
-        "task_info": request.form.get("task_info"),
-        "delegation": request.form.get("delegation"),
-        "task_due": request.form.get("task_due"),
-        "complete": True})
+        {'_id': ObjectId(task_id)}, 
+        {"$set": {
+        "complete": True}})
 
     return redirect(url_for('overview'))
 

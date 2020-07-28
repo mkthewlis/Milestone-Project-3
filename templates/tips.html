@@ -1,4 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h3 class="standard-heading title-margin-top">Here are our top tips to get you ready to MoveOn:</h3>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2">
+			<ul>
+                <li class="list-text"><i class="far fa-check-circle"></i>Start planning early - getting ready to move often takes more time than we think!
+                </li>
+                <li class="list-text"><i class="far fa-check-circle"></i>Make a list of all that needs doing and prioritise your checklist to get done in time
+                </li>
+                <li class="list-text"><i class="far fa-check-circle"></i>Inform your local postal service that you will be moving and arrange to have all mail forwarded 
+                to your new address
+                </li>
+                <li class="list-text"><i class="far fa-check-circle"></i>Get a good night’s sleep before your moving day and get ready to say hello to your new home!
+                </li>
+                <li class="list-text"><i class="far fa-check-circle"></i>Remember to pack some snacks and drinks with you for the moving day - not only will they be 
+                refreshing for you, they will also be highly appreciated by the staff! 
+                </li>
+            </ul>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-md-6 text-center">
+			<h3 class="standard-heading title-margin-top">Why not let us help you get ready for your next big move?</h3>
+            <a class="btn standard-sign-up-btn" id="redirect-signup-btn" href="{{url_for('sign_up')}}">Sign Up</a>
+		</div>
+        <div class="col-12 col-md-6">
+			<img class="tips-image img-fluid" src="{{url_for('static', filename='/images/' + 'undraw_moving.png')}}" alt="Packing boxes" />
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center login-prompt">
+			<h4 class="standard-heading">Already have an account?</h4>
+			<a class="btn sign-in-btn text-center" id="redirect-signin-btn" href="{{url_for('sign_in')}}">Sign in</a>
+		</div>
+	</div>
+</div>
 {% endblock %}

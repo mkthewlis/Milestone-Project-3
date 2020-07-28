@@ -396,3 +396,10 @@ ul p {
     padding-top: 0px;
     float: right;
 }
+
+.copy-success {
+    color: red;
+    float: right;
+    margin-left: 5px;
+}
+

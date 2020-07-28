@@ -66,6 +66,29 @@ body {
     line-height: 45px;
 }
 
+.share-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #3A2E39;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-top: 20px;
+}
+
+.share-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: #3A2E39;
+    padding-left: 3px;
+    padding-right: 3px;
+} 
+
+.copy-icon {
+    cursor: pointer;
+}
+
 .list-title {
     color: #3A2E39;
     font-family: 'Roboto', sans-serif;
@@ -117,15 +140,13 @@ body {
     border: 1px solid #7DDE9D;
 }
 
-#redirect-signup-btn, #form-signup-btn {
-    text-decoration: none;
-}
 
-#nav-btn, #redirect-signup-btn, #form-signup-btn, #sign-out-btn{
+#nav-btn, #redirect-signup-btn, #form-signup-btn, #sign-out-btn, #footer-btn {
     color: #F9F6EC;
     padding-left: 10px;
     padding-right: 10px;
     width: 95px;
+    text-decoration: none;
 }
 
 .standard-sign-up-btn:hover, #nav-btn:hover, #redirect-signup-btn:hover, #form-signup-btn:hover, #sign-out-btn:hover {
@@ -135,6 +156,19 @@ body {
 
 #sign-out-btn {
     width: 103px;
+}
+
+#back-to-top {
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 56px;
+    color: #3A2E39;
+    font-size: 40px;
+}
+
+#footer-btn {
+    line-height: 80px;
 }
 
 .task-btn {
@@ -192,6 +226,8 @@ body {
     border: 1px solid #BCC9DC;
     color: #F9F6EC;
 }
+
+
 /*----------------------------------------------------Navbar styling*/
 
 .logo-design {
@@ -234,6 +270,11 @@ body {
     background-color: #F6FDF8;
 }
 
+.footer-items{
+    padding: .5rem 1rem;
+}
+
+
 /*----------------------------------------------------------------------------### END OF: General project styles ### */
 /*----------------------------------------------------------------------------### START OF: index.html ### */
 
@@ -274,7 +315,11 @@ body {
 }
 
 .carousel-indicators li {
-    color: red;
+    background-color: #DCE3ED;
+}
+
+.carousel-indicators .active {
+  background-color: #BCC9DC;
 }
 
 .login-prompt {

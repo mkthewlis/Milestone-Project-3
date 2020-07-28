@@ -8,8 +8,14 @@ $(document).ready(function(){
         return false;
     });
 
-});
+    $("a[href='#container']").click(function () {
+    //  Get the text field
 
+    console.log("Hejsan!")
+
+    });
+
+});
 
 
 

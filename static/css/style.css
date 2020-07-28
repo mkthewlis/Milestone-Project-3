@@ -244,6 +244,10 @@ body {
     width: 600px;
 }
 
+.carousel-header {
+    margin-top: 120px;
+}
+
 /*----------------------------------------------------------------------------### START OF: signin.html ### */
 
 /* Form control guidance courtesy of https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow */

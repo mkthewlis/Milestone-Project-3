@@ -265,12 +265,21 @@ body {
 .carousel-image-style {
     border: 6px solid #DCE3ED;
     padding: 20%;
-    padding-top: 5%;
+    padding-top: 2%;
 }
 
 .carousel-icons-style {
     color: #DCE3ED;
     font-size: 40px;
+}
+
+.carousel-indicators li {
+    color: red;
+}
+
+.login-prompt {
+    margin-top: 80px;
+    margin-bottom: 200px;
 }
 
 /*----------------------------------------------------------------------------### START OF: signin.html ### */

@@ -47,13 +47,24 @@
                 </div>
             </nav>
         </header>
-    <main>
-    {% block content %}
-    {% endblock %}
-    </main>
-    <footer>
-    </footer>
-    </div>
+
+
+        <main class="footer-margin">
+        {% block content %}
+        {% endblock %}
+        </main>
+
+
+        <footer class="container-fluid" id="footer-position">
+            <div class="row">
+                <div class="col-12">
+                    <a class="standard-sign-up-btn" href="#container">Back to top</a>
+
+
+                </div>
+            </div>
+        </footer>
+        </div>
 
     <!--Link to Bootstrap scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

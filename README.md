@@ -20,3 +20,4 @@ The deployed version of this project can be viewed here: https://ms3-move-on.her
 - Change form colors when active - https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow
 - Add list items for each task - https://www.geeksforgeeks.org/todo-list-app-using-flask-python/
 - Scroll top JavaScrip - https://www.journaldev.com/5446/how-to-create-scroll-to-top-animation-in-jquery
+- Clipboard.js - https://clipboardjs.com/

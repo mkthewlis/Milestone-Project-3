@@ -38,22 +38,17 @@ body {
 .standard-heading {
     color: #3A2E39;
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 30px;
     line-height: 45px;
     text-align: center;
-}
-
-.index-heading {
-    text-align: left;
 }
 
 .smaller-heading {
     color: #3A2E39;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 25px;
     line-height: 45px;
 }
@@ -61,7 +56,6 @@ body {
 .list-title {
     color: #3A2E39;
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
     font-weight: 100;
     font-size: 23px;
     line-height: 45px;
@@ -70,7 +64,6 @@ body {
 .list-text {
     color: #3A2E39;
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
     font-weight: 100;
     font-size: 20px;
     line-height: 30px;
@@ -223,7 +216,6 @@ body {
 /*----------------------------------------------------------------------------### END OF: General project styles ### */
 /*----------------------------------------------------------------------------### START OF: index.html ### */
 
-/*----------------------------------------------------Main section styling*/
 .index-main {
     height: 400px;
 }
@@ -239,13 +231,25 @@ body {
 }
 
 .main-image {
-    padding-top: 15%;
-    height: 500px;
-    width: 600px;
+    padding-top: 50%;
+    height: 550px;
+    width: 550px;
 }
 
 .carousel-header {
-    margin-top: 120px;
+    margin-top: 180px;
+    margin-bottom: 80px;
+}
+
+.carousel-image-style {
+    border: 6px solid #DCE3ED;
+    padding: 20%;
+    padding-top: 5%;
+}
+
+.carousel-icons-style {
+    color: #DCE3ED;
+    font-size: 40px;
 }
 
 /*----------------------------------------------------------------------------### START OF: signin.html ### */

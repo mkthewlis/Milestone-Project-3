@@ -332,12 +332,40 @@ body {
     margin-bottom: 200px;
 }
 
-
 /*----------------------------------------------------------------------------### END OF: index.html ### */
 /*----------------------------------------------------------------------------### START OF: tips.html ### */
 
 .tips-image{
     border: 6px solid #DCE3ED;
+}
+
+.tips-icon {
+    color: #A7E8BD;
+    font-size: 25px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.tips-list {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.tips-list:before{
+    font-family: "Font Awesome 5 Free";
+    content: '\f058';
+    color: #A7E8BD;
+    margin:0 10px 0 -35px;
+    font-size: 25px;
+    list-style-position: outside;
+}
+
+.remove-bullets{
+    list-style: none;
+}
+
+.tips-row {
+    margin-bottom: 80px;
 }
 
 /*----------------------------------------------------------------------------### END OF: tips.html ### */
@@ -358,10 +386,6 @@ body {
 }
 /*----------------------------------------------------------------------------### END OF: signin.html ### */
 /*----------------------------------------------------------------------------### START OF: overview.html ### */
-
-ul {
-    list-style-type: none;
-}
 
 ul p {
     margin-bottom: 0px;

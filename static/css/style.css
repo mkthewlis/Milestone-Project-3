@@ -300,11 +300,11 @@ body {
 }
 
 .carousel-item>img{
-    max-height: 500px;
+    max-height: 550px;
 }
 
 .carousel-header {
-    margin-top: 180px;
+    margin-top: 80px;
     margin-bottom: 80px;
 }
 

@@ -82,8 +82,8 @@ def overview():
                                 completed=completed)
 
     elif not tasks:
-        empty_list = 'It looks like your moving list is empty!\
-                    Why not get started by adding some tasks now?'
+        empty_list = 'It looks like your moving list is empty!<br>\
+                    Why not get started by adding some tasks right away?'
         # Removes image until user has tasks
         image_position = 'image_position'
         return render_template(

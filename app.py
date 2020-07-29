@@ -160,6 +160,9 @@ def update_tasks(task_id):
     #Finds the task with matching id
     username = session['username']
 
+    # if request.method == 'POST':
+
+    #else:   
     updating_task = mongo.db.tasks.find_one_and_update({"_id": ObjectId(task_id)}, 
         {"$set":
         {"username": username,

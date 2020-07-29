@@ -98,6 +98,16 @@ body {
     line-height: 30px;
 }
 
+.standard-divider {
+    width: 60%;
+    height: 0px;
+    margin: 0 auto;
+    border: 1px solid #3A2E39;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    opacity: 40%;
+}
+
 /*----------------------------------------------------Button styling*/
 
 .standard-sign-up-btn {
@@ -334,6 +344,10 @@ body {
 /*----------------------------------------------------------------------------### END OF: index.html ### */
 /*----------------------------------------------------------------------------### START OF: tips.html ### */
 
+.tips-heading {
+    margin-bottom: 30px;
+}
+
 .tips-image{
     border: 6px solid #DCE3ED;
 }
@@ -352,7 +366,8 @@ body {
 
 .tips-list:before{
     font-family: "Font Awesome 5 Free";
-    content: '\f058';
+    content: "\f061";
+    font-weight: 900;
     color: #A7E8BD;
     margin:0 10px 0 -35px;
     font-size: 25px;

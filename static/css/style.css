@@ -26,11 +26,9 @@ body {
     padding-bottom: 10px;
 }
 
-.sign-image {
-    height: 550px;
-    width: 550px;
+.image-margins {
+    margin-bottom: 200px;
 }
-
 /*----------------------------------------------------Background colour*/
 
 .navbar-bg {
@@ -371,7 +369,7 @@ body {
 
 
 /*----------------------------------------------------------------------------### END OF: tips.html ### */
-/*----------------------------------------------------------------------------### START OF: signin.html ### */
+/*----------------------------------------------------------------------------### START OF: signin.html & signup.html ### */
 
 /* Form control guidance courtesy of https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow */
 .form-control:focus{   
@@ -386,7 +384,14 @@ body {
     box-shadow: 0 1px 1px #EFB7B9 inset, 0 0 8px #EFB7B9;
     outline: 0 none;
 }
-/*----------------------------------------------------------------------------### END OF: signin.html ### */
+
+.sign-up-img{
+    max-height: 450px;
+    margin-top: 50px;
+}
+
+
+/*----------------------------------------------------------------------------### END OF: signin.html & signup.html ### */
 /*----------------------------------------------------------------------------### START OF: overview.html ### */
 
 ul p {

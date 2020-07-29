@@ -286,7 +286,7 @@ body {
 /*----------------------------------------------------------------------------### START OF: index.html ### */
 
 .index-main {
-    height: 400px;
+    margin-bottom: -20%;
 }
 
 .main-titles {
@@ -299,8 +299,8 @@ body {
 	margin-right: -300px;
 }
 
-.main-image {
-    padding-top: 50%;
+.carousel-item>img{
+    max-height: 500px;
 }
 
 .carousel-header {
@@ -434,5 +434,3 @@ ul p {
     padding-top: 0px;
     float: right;
 }
-
-

@@ -26,13 +26,13 @@
             </form>
         </div>
         <div class="col-12 col-md-6">
-            <img class="new-task-image" src="{{url_for('static', filename='/images/' + 'undraw_happy_announcement.png')}}" alt="Creating tasks together" />
+            <img class="img-fluid" src="{{url_for('static', filename='/images/' + 'undraw_happy_announcement.png')}}" alt="Creating tasks together" />
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-12 text-center standard-box lower-box-margin">
+        <div class="col-md-12 text-center standard-box lower-box-margin responsive-lower-margin">
             <h4 class="smaller-heading">Return to my checklist</h4>   
             <a class="btn standard-sign-up-btn" id="redirect-overview" href="{{url_for('overview')}}">View my checklist</a>
         </div>

@@ -451,9 +451,8 @@ ul p {
 /*----------------------------------------------------------------------------### END OF: overview.html ### */
 /*----------------------------------------------------------------------------### START OF: newtasks.html ### */
 
-.new-task-image {
-    height: 400px;
-    max-width: 400px;
-    padding-top: 0px;
-    float: right;
+@media screen and (max-width: 422px){
+    .responsive-lower-margin {
+        margin-bottom: 300px;
+    }
 }

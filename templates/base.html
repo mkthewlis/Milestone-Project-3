@@ -13,7 +13,7 @@
     <div id="container">
         <header>
             <!--Basic navbar structure from Bootstrap with additional styling-->
-            <nav class="navbar navbar-expand-md navbar-light navbar-bg">
+            <nav class="navbar navbar-expand-md fixed-top navbar-light navbar-bg">
                 <a class="logo-design" href="{{url_for('index')}}">MoveOn</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -49,7 +49,7 @@
         </header>
 
 
-        <main class="footer-margin">
+        <main class="main-margin">
         {% block content %}
         {% endblock %}
         </main>

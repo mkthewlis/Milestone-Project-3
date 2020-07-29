@@ -15,6 +15,11 @@ body {
     position:relative;
 }
 
+/*Adds top padding to all html pages so navbar doesn't cover content*/
+.main-margin{
+    padding-top: 100px;
+}
+
 .title-margin-top {
     margin-top: 5%;
     margin-bottom: 5%;
@@ -37,7 +42,7 @@ body {
 /*----------------------------------------------------Background colour*/
 
 .navbar-bg {
-    background-color: #F6FDF8;
+    opacity: 100%;
     min-height: 100px;
 }
 
@@ -261,6 +266,12 @@ body {
 
 .navbar-light .navbar-nav .nav-link:hover {
     color: #EFB7B9;
+}
+
+/*Changes the color of the navbar on scroll*/
+.fixed-top.scrolled {
+  background-color: #F6FDF8 !important;
+  transition: background-color 200ms linear;
 }
 
 /*----------------------------------------------------Footer styling*/

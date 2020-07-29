@@ -347,7 +347,7 @@ body {
 }
 
 .tips-list {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 25px;
 }
 
@@ -364,9 +364,11 @@ body {
     list-style: none;
 }
 
-.tips-row {
-    margin-bottom: 80px;
+.tips-signup-prompt {
+    margin-top: 80px;
 }
+
+
 
 /*----------------------------------------------------------------------------### END OF: tips.html ### */
 /*----------------------------------------------------------------------------### START OF: signin.html ### */

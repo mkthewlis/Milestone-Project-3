@@ -21,15 +21,15 @@
                 <div class="collapse navbar-collapse menu-font" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+                            <a class="nav-link {% block nav_home %}{% endblock %}" href="{{url_for('index')}}">Home</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="{{url_for('tips')}}">Top Tips</a>
+                            <a class="nav-link {% block nav_tips %}{% endblock %}" href="{{url_for('tips')}}">Top Tips</a>
                         </li>
                         <!--Changes the navbar if a user is logged in-->
                         {% if session.username %}
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="{{url_for('overview')}}">My Tasks</a>
+                            <a class="nav-link {% block nav_overview %}{% endblock %}" href="{{url_for('overview')}}">My Tasks</a>
                         </li>
                         <li class="nav-item mr-2">
                             <a class="nav-link standard-sign-up-btn" id="sign-out-btn" href="{{url_for('logout')}}">Sign Out</a>
@@ -37,7 +37,7 @@
                         {% endif %}
                         {% if not session.username %}
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="{{url_for('sign_in')}}">Sign In</a>
+                            <a class="nav-link {% block nav_signin %}{% endblock %}" href="{{url_for('sign_in')}} {% block navbar %}{% endblock %}">Sign In</a>
                         </li>
                         <li class="nav-item mr-2">
                             <a class="nav-link standard-sign-up-btn" id="nav-btn" href="{{url_for('sign_up')}}">Sign Up</a>

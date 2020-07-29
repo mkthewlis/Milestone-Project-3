@@ -274,6 +274,11 @@ body {
   transition: background-color 200ms linear;
 }
 
+.active-menu {
+    border-bottom: 2px solid #A7E8BD !important;
+    padding-bottom: 0.5px !important;
+}
+
 /*----------------------------------------------------Footer styling*/
 
 #footer-position{

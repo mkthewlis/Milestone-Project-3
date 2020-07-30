@@ -194,6 +194,14 @@ def delete_task(task_id):
     #Redirects to task list so users see task is gone
     return redirect(url_for('overview'))
 
+"""
+@app.route('/remove_completed_task/<complete>')
+def remove_completed_task(complete):
+    mongo.db.tasks.remove({'_id': ObjectId(complete)})
+    #Redirects to task list so users see task is gone
+    return redirect(url_for('overview'))
+"""
+
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

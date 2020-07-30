@@ -50,6 +50,7 @@
 		{% for complete in completed %}
             <div class="list-title extra-list-padding">
                 <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}}</p>
+                <!--<a class="btn task-btn delete-btn" href="{{url_for('remove_completed_task', complete=complete._tasks)}}">Delete</a>-->
             </div>
 		{% endfor %}
     </div>

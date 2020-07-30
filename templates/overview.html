@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block nav_overview %} active-menu {% endblock %}
 {% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
 <div class="container">
 	<div class="row">
 		<div class="col">
@@ -50,7 +58,6 @@
 		{% for complete in completed %}
             <div class="list-title extra-list-padding">
                 <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}}</p>
-                <!--<a class="btn task-btn delete-btn" href="{{url_for('remove_completed_task', complete=complete._tasks)}}">Delete</a>-->
             </div>
 		{% endfor %}
     </div>

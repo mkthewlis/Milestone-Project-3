@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
@@ -57,8 +57,13 @@ def sign_in():
                 session['username'] = request.form['username']
                 # If correct, the user is sent to their personal overview page with all task functions available to them
                 return redirect(url_for('overview'))
+            else:
+                flash('Oops, it looks like you\'ve entered the wrong combination of username and password. Why not try again?', 'danger')
+                return redirect(url_for('sign_in'))
 
-        return 'Invalid username/ password combination'
+        elif not login_user:
+            flash('We don\'t have that username on file! Please check your spelling and try again.', 'danger')
+            return redirect(url_for('sign_in'))
 
 
 # Routing that shows the users overview/ dashboard when they have logged in or registered
@@ -109,7 +114,7 @@ def sign_up():
             # With the user data stored, they are sent to their new 'overview' page
             return redirect(url_for('overview'))
 
-        return 'That username already exists!'
+        flash('Oops, that username already exists! Please try again with another username.')
 
     return render_template('signup.html')
 
@@ -118,9 +123,12 @@ def sign_up():
 # Function to logout existing users
 @app.route('/logout')
 def logout():
+    if 'username' in session: 
     # This removes the current username from the session
-    session.pop('username', None)
-    return redirect(url_for('sign_in'))
+        session.pop('username', None)
+
+        flash("Success, you've been logged out. See you next time!", "info")
+        return redirect(url_for('sign_in'))
 
 
 # Directs to page to add new tasks
@@ -194,13 +202,13 @@ def delete_task(task_id):
     #Redirects to task list so users see task is gone
     return redirect(url_for('overview'))
 
-"""
-@app.route('/remove_completed_task/<complete>')
-def remove_completed_task(complete):
-    mongo.db.tasks.remove({'_id': ObjectId(complete)})
-    #Redirects to task list so users see task is gone
-    return redirect(url_for('overview'))
-"""
+
+# @app.route('/remove_completed_task/<complete>')
+# def remove_completed_task(complete):
+    # mongo.db.tasks.remove({'_id': ObjectId(complete)})
+    # Redirects to task list so users see task is gone
+    # return redirect(url_for('overview'))
+
 
 
 if __name__ == '__main__':

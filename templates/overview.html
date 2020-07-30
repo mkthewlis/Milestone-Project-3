@@ -28,7 +28,7 @@
 	    <div class="col-12 col-lg-6">
 		{% for task in tasks %}
             {% if not task.complete %}
-                <ul class="remove-bullets">
+                <ul class="remove-bullets overview-padding-sm-screens">
                     <li>
                         <div class="task-display">
                             <a class="btn toggle-display-btn" data-toggle="collapse" href="#collapseTask{{ task._id }}" role="button" aria-expanded="false" aria-controls="collapseTask{{ task._id }}">
@@ -56,7 +56,7 @@
 		{% endfor %}
 		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
 		{% for complete in completed %}
-            <div class="list-title extra-list-padding">
+            <div class="list-title extra-list-padding overview-padding-sm-screens">
                 <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}}</p>
             </div>
 		{% endfor %}

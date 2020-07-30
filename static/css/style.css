@@ -533,3 +533,29 @@ ul p {
     }
 }
 
+/*----------------------------------------------------tips.html media queries*/
+
+@media screen and (max-width: 1024px){
+    .tips-list{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .tips-image {
+        margin-top: 40px;
+    }
+
+    .tips-signup-prompt{
+        margin-top: 0px;
+    }
+}
+
+/*----------------------------------------------------overview.html media queries*/
+
+@media screen and (max-width: 767px){
+    .overview-padding-sm-screens{
+        padding-left: 0px;
+    }
+}
+

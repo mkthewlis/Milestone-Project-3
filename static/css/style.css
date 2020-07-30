@@ -298,17 +298,17 @@ body {
     color: #EFB7B9;
     float: right;
     margin-left: 5px;
+    border: none;
+    margin-bottom: 0px;
 }
 
 .copy-icon {
     cursor: pointer;
     font-size: 15px;
     line-height: 30px;
-    margin-left: 16px;
     border: 2px solid #F6FDF8;
     border-radius: 50%;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding: 3px 6px 3px 6px;
 }
 
 .copy-icon:hover {

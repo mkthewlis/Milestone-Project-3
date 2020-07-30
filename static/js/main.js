@@ -27,9 +27,10 @@ $(document).ready(function(){
     });
 
 
-    $('.btn').click(function(){
-        $(".btn-container").find((".expand-btn").not($(this)).addClass(".collapse"));
-    });
+    //$('.collapse').on('show.bs.collapse', function () {
+        // hide all accordion except the clicked one
+        //$('.collapse').not(this).collapse('hide');
+    //});
 
 });
 

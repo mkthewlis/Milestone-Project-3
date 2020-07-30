@@ -455,8 +455,6 @@ ul p {
 }
 
 .overview-image {
-    height: 300px;
-    max-width: 450px;
     padding-top: 0px;
     margin-top: 0px;
     float: right;
@@ -557,5 +555,14 @@ ul p {
     .overview-padding-sm-screens{
         padding-left: 0px;
     }
+
+    .overview-image {
+    margin-top: 50px;
+    }
 }
 
+@media screen and (max-width: 991px){
+.overview-image {
+    margin-top: 50px;
+    }
+}

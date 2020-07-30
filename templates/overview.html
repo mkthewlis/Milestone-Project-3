@@ -4,7 +4,7 @@
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for msg in messages %}
-            <p class="flash-messages">{{ msg }}</p>
+            <p class="flash-messages" id="current-message">{{ msg }}</p>
         {% endfor %}
     {% endif %}
 {% endwith %}

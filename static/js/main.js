@@ -26,6 +26,9 @@ $(document).ready(function(){
         });
     });
 
+    // Fades out flash message gradually after user has read it
+    $("#current-message").delay(5000).fadeOut("slow");
+
 });
 
 

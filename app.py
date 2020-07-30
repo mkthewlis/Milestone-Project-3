@@ -58,11 +58,11 @@ def sign_in():
                 # If correct, the user is sent to their personal overview page with all task functions available to them
                 return redirect(url_for('overview'))
             else:
-                flash('Oops, it looks like you\'ve entered the wrong combination of username and password. Why not try again?', 'danger')
+                flash('Oops, it looks like you\'ve entered the wrong combination of username and password. Why not try again?')
                 return redirect(url_for('sign_in'))
 
         elif not login_user:
-            flash('We don\'t have that username on file! Please check your spelling and try again.', 'danger')
+            flash('We don\'t have that username on file! Please check your spelling and try again.')
             return redirect(url_for('sign_in'))
 
 
@@ -123,11 +123,12 @@ def sign_up():
 # Function to logout existing users
 @app.route('/logout')
 def logout():
+    username = session['username']
     if 'username' in session: 
     # This removes the current username from the session
         session.pop('username', None)
 
-        flash("Success, you've been logged out. See you next time!", "info")
+        flash("You've successfully logged out. See you next time, " + username + "!")
         return redirect(url_for('sign_in'))
 
 

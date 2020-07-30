@@ -2,7 +2,7 @@
 
 ## Code Institute: Milestone Project 2
 
-![MoveOn Responsive Design](https://github.com/mkthewlis/Milestone-Project-3/blob/master/assets/images/readme_images/am_i_responsive.png)
+![MoveOn Responsive Design](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/am_i_responsive.png)
 
 *MoveOn* is an app that aims to help users prepare for relocating to their new home. My aim with this project was to create an app that would be intuitive, useful and enjoyable to use. 
 

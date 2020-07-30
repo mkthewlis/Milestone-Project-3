@@ -276,6 +276,12 @@ body {
     color: #EFB7B9;
 }
 
+.fixed-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
 /*Changes the color of the navbar on scroll*/
 .fixed-top.scrolled {
   background-color: #F6FDF8 !important;
@@ -487,5 +493,18 @@ ul p {
 @media screen and (max-width: 422px){
     .responsive-lower-margin {
         margin-bottom: 300px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .active-menu{
+        border: none !important;
+        color: #7DDE9D !important;
+    }
+    .nav-item {
+        text-align: right;
+    }
+    #nav-btn {
+        float: right;
     }
 }

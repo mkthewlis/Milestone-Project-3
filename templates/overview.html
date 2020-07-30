@@ -23,14 +23,14 @@
                 <ul class="remove-bullets">
                     <li>
                         <div class="task-display">
-                            <a class="btn toggle-display-btn" data-toggle="collapse" href="#collapseTask" role="button" aria-expanded="false" aria-controls="collapseTask">
+                            <a class="btn toggle-display-btn" data-toggle="collapse" href="#collapseTask{{ task._id }}" role="button" aria-expanded="false" aria-controls="collapseTask{{ task._id }}">
                                 <i class="fas fa-chevron-down expand-btn"></i>
                             </a>
                         </div>
                         <div class="task-display list-title">
                             <p>{{task.task_title}}</p>
                         </div>
-                        <div class="collapse" id="collapseTask">
+                        <div class="collapse" id="collapseTask{{ task._id }}">
                             <div class="card card-body">
                                 <ul class="list-text">
                                     <li><strong>Extra information:</strong> {{task.task_info}}</li>

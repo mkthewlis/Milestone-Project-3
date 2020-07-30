@@ -316,7 +316,7 @@ body {
 }
 
 .copy-icon:hover {
-    border: 2px solid #A7E8BD;
+    color: #A7E8BD;
 }
 
 /*----------------------------------------------------------------------------### END OF: General project styles ### */
@@ -564,5 +564,22 @@ ul p {
 @media screen and (max-width: 991px){
 .overview-image {
     margin-top: 50px;
+    }
+}
+
+/*----------------------------------------------------newtasks.html media queries*/
+
+@media screen and (max-width: 767px){
+    .task-image{
+        margin-top: 50px;
+    }
+}
+
+/*----------------------------------------------------signup.html/signin.html media queries*/
+
+@media screen and (max-width: 767px){
+    .alternative-prompt{
+        margin-top: 50px;
+        margin-bottom: 30px;
     }
 }

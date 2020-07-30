@@ -15,10 +15,6 @@ body {
     position:relative;
 }
 
-/*Adds top padding to all html pages so navbar doesn't cover content*/
-.main-margin{
-    padding-top: 100px;
-}
 
 .title-margin-top {
     margin-top: 5%;
@@ -276,14 +272,8 @@ body {
     color: #EFB7B9;
 }
 
-.fixed-top {
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-}
-
 /*Changes the color of the navbar on scroll*/
-.fixed-top.scrolled {
+.sticky-top.scrolled {
   background-color: #F6FDF8 !important;
   transition: background-color 200ms linear;
 }
@@ -504,7 +494,7 @@ ul p {
     .nav-item {
         text-align: right;
     }
-    #nav-btn {
+    .navbar-nav {
         float: right;
     }
 }

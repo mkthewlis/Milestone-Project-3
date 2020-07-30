@@ -21,7 +21,7 @@ $(document).ready(function(){
     // Adds background color to navbar on scroll down, inspired by source code found on here: https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
     $(function () {
         $(document).scroll(function () {
-        var $nav = $(".fixed-top");
+        var $nav = $(".sticky-top");
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         });
     });

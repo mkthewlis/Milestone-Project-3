@@ -9,7 +9,7 @@ $(document).ready(function(){
         });
 
     // Success message when user has copied URL from footer
-    clipboard.on('success', function(e) {
+    clipboard.once('success', function(e) {
         $('.copy-icon').append('<p class="copy-success">Copied!</p>');
     });
 
@@ -26,13 +26,14 @@ $(document).ready(function(){
         });
     });
 
+
+    $('.btn').click(function(){
+        $(".btn-container").find((".expand-btn").not($(this)).addClass(".collapse"));
+    });
+
 });
 
 
-
-    //$('.expand-btn').click(function(){
-        //$(".btn-container").find((".expand-btn").not($(this)).addClass(".collapse"));
-    //});
 
 
 

@@ -304,11 +304,15 @@ body {
     cursor: pointer;
     font-size: 15px;
     line-height: 30px;
-    margin-left: 10px;
+    margin-left: 16px;
+    border: 2px solid #F6FDF8;
+    border-radius: 50%;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .copy-icon:hover {
-    color: #A7E8BD;
+    border: 2px solid #A7E8BD;
 }
 
 /*----------------------------------------------------------------------------### END OF: General project styles ### */

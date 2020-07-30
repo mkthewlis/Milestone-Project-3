@@ -336,6 +336,10 @@ body {
 	margin-right: -300px;
 }
 
+.sm-screen-divider {
+    display: none;
+    width:200px;
+}
 .carousel-item>img{
     max-height: 600px;
 }
@@ -364,6 +368,9 @@ body {
   background-color: #BCC9DC;
 }
 
+.sm-screen-steps {
+    display: none;
+}
 
 /*----------------------------------------------------------------------------### END OF: index.html ### */
 /*----------------------------------------------------------------------------### START OF: tips.html ### */
@@ -480,9 +487,11 @@ ul p {
 /*----------------------------------------------------------------------------### END OF: overview.html ### */
 /*----------------------------------------------------------------------------### START OF: newtasks.html ### */
 
+/*----------------------------------------------------General app media queries*/
+
 @media screen and (max-width: 422px){
     .responsive-lower-margin {
-        margin-bottom: 300px;
+        margin-bottom: 250px;
     }
 }
 
@@ -498,3 +507,29 @@ ul p {
         float: right;
     }
 }
+
+/*----------------------------------------------------index.html media queries*/
+
+@media screen and (max-width: 767px){
+    .carousel{
+        display: none !important;
+    }
+    
+    .sm-screen-steps {
+    display: inline-block !important;
+    border: 6px solid #DCE3ED;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .smallest-screens-padding {
+        padding-left: 0px;
+    }
+
+    .sm-screen-divider {
+        display: block;
+    }
+}
+

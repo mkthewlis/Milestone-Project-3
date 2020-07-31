@@ -1,6 +1,6 @@
 # MoveOn
 
-## Code Institute: Milestone Project 2
+## Code Institute: Milestone Project 3
 
 ![MoveOn Responsive Design](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/am_i_responsive.png)
 
@@ -99,6 +99,29 @@ Design for tablet devices:
 ![My responsive design for tablet devices](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/figma_tablet.png)
 
 [The entire workspace can be viewed on Figma with this link.](https://www.figma.com/file/Hv9GYC33ydTGLuwIxydgRr/Code-Institute?node-id=170%3A2)
+
+## Features
+
+### Existing Features
+
+This project consists of seven pages, three of which can only be accessed after a user has created an account and signed in.
+
+#### Consistent features across all pages
+
+- The menu at the top of the page and footer are consistent and responsive throughout the website. 
+- Each page uses interactive arrows to visually encourage the user to scroll down. These can also be clicked on to take them further down the page. The arrows are either the theme blue or yellow to remain consistent on each page.
+- Certain images are used more than once at various points in the website for consistency and familiarity.
+- Each page begins with an image with a fixed background and is then divided into clear sections in a similar pattern.
+
+#### Home
+
+- The user meets a simple title that explains the purpose of the website and encourages them to read on.
+- The user is then presented with a fact about ocean waste and the mission of *Our Oceans, Our Plastic*.
+- The end of the page provides three links for the user: to learn more, take the quiz or sign up to the newsletter.
+
+
+
+
 
 ### Sources:
 - Coolors - colour picker https://coolors.co/a7e8bd-dce3ed-f6fdf8-f9f6ec-efb7b9-3a2e39

@@ -111,7 +111,7 @@ This project consists of seven pages, three of which can only be accessed after 
 - The menu at the top of the page and footer are consistent in design and responsive throughout the website. However, the contents of the menu changes depending on if a user is logged in or not.
 - The menu bar for users logged in features a 'Sign Out' button where the 'Sign Up' button usually is. When a user in session chooses to sign out, a flash message confirms this action and they are redirected back to the 'Sign In' page.
 - Each page has a footer with an arrow button to smoothly scroll back to the top. 
-- The footer also features an icon to copy the URL for ease of sharing the app with others, created with clipboard.js (referenced below).
+- The footer also features an icon to copy the URL for ease of sharing the app with others, created with clipboard.js (referenced below). When a user successfully copies the url, they are notified with 'Copied!' being appended to the text. If it fails (for example, without browser support), an alert tells the user the issue and explains how to manually copy the url to share it on.
 - Although each page features different illustrations/ graphics, they are all designed with the same color palette and are from the same illustrator for consistency.
 - All sign in/ sign up buttons are designed consistently in their respective colors across the app.
 - The active page is underlined with a green line to show the user which page their are on.
@@ -171,7 +171,56 @@ This project consists of seven pages, three of which can only be accessed after 
 
 ## Technologies Used
 
+### Languages, libraries, databases, frameworks, editors and version control
 
+- HTML5
+    * The language used to create add structure and content to the website.
+- CSS3 
+    * The language used to style the HTML5 elements according to the design colour scheme.
+- JavaScript
+    * The languge used to make the app interactive, including the user of the clipboard.js functionality. 
+- [jQuery](https://jquery.com/)
+    * I used the jQuery library to help write the JavaScript code used in this project.
+- Python
+    * The programming languaged used to create the back-end function of the app.
+- PyMongo
+    * PyMongo was used as the Python API for MongoDB. This API enables linking the data from the back-end database to the front-end app.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    * Th Python microframework Flask was used to help write the Python code for this project.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+    * The Jinja templating language was used with Flask in the HTML code. This allowed for template inheritance from the base.html file and to link the back-end to the front-end. 
+- [MongoDB](https://www.mongodb.com/)
+    * This was the selected database chosen to store data in the cloud.  
+- [Bootstrap framework](https://getbootstrap.com/) 
+    * Bootstrap's grid container system as I wanted to design my project with a 'mobile first' approach. I also used Bootstrap's carousel and accordion features to add structure to my content. 
+- [Gitpod](https://www.gitpod.io/)
+    * I relied on Gitpod's dev environment to write the code for my project.
+- [Git Version Control](https://git-scm.com/)
+    * I used Git for Version Control to track and record changes to my code and refer back when needed.
+- [GitHub](https://github.com/)
+    * I used GitHub as my remote repository, to push to and store the commited changes to my app from Git.
+- [Heroku](https://www.heroku.com/)
+    * I used Heroku as a hosting platform to deploy the live version of my app. 
+
+## Additional tools used
+- [Figma](https://www.figma.com/) 
+    * Figma helped me design my project, by creating wireframes for desktop, tablet and mobile devices. 
+- [FontAwesome](https://fontawesome.com/) 
+    * I relied on free FontAwesome icons, including a copy icon, different types of arrows and a 'tick' to show items as complete.
+- [unDraw](https://undraw.co/search) 
+    * This was the source of all graphics and illustrations used on the app. 
+- [TinyPNG](https://tinypng.com/) 
+    * I used TinyPNG to compress my image files to try to reduce the loading time for each page. 
+- [Google Fonts](https://fonts.google.com/)
+    * I used two complementary fonts from Google for my project: Roboto and Quicksand. 
+- [Gauger Fonticon Generator](https://gauger.io/fonticon/) 
+    * This free interactive Fonticon Generator allowed me to create a fonticon with a Font Awesome icon and style it with the colours from my colour scheme.
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    * This was a great tool throughout the project to check whether there were any errors in my HTML and CSS code (as discussed in more detail below).
+ - [JSHint](https://jshint.com/) 
+    * This tool helped me test my JavaScript and jQuery code (explained in more detail in the Testing section below). 
+- [PEP 8 online](http://pep8online.com/)
+    * I used PEP 8 to beautify my python code and to check it complied with formatting standards. 
 
 
 ### Sources:

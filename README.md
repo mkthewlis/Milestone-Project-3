@@ -232,3 +232,4 @@ This project consists of seven pages, three of which can only be accessed after 
 - Scroll top JavaScrip - https://www.journaldev.com/5446/how-to-create-scroll-to-top-animation-in-jquery
 - Clipboard.js - https://clipboardjs.com/
 - Background color jquery code - https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
+- Datetime picker - https://bootstrapious.com/p/bootstrap-datepicker

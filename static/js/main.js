@@ -29,6 +29,15 @@ $(document).ready(function(){
     // Fades out flash message gradually after user has read it
     $("#current-message").delay(5000).fadeOut("slow");
 
+    // Function required for the date/time picker in the task forms
+    $(function () {
+        $('.datepicker').datepicker({
+            clearBtn: true,
+            format: "dd/mm/yyyy"
+        });
+    });
+
+
 });
 
 

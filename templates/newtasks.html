@@ -32,7 +32,15 @@
                     <input id="delegation" name="delegation" type="text" class="form-control" placeholder="Delegated to" required>
                 </div>
                 <div class="form-group">
-                    <input id="task_due" name="task_due" type="text" class="form-control" placeholder="Due Date" required>
+                    <!--Date/ time picker courtesy of: https://eonasdan.github.io/bootstrap-datetimepicker/-->
+                    <div class="datepicker date input-group">
+                        <input type="text" class="form-control" id="task_due" name="task_due" placeholder="Hey Mims!" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text px-4"><i class="fa fa-clock-o"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <!--<input id="task_due" name="task_due" type="text" class="form-control" placeholder="Due Date" required>-->
                 </div>
                 <input class="task-btn sign-in-btn title-margin-top" type="submit" value="Add Task">
             </form>

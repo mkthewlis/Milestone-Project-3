@@ -275,7 +275,7 @@ body {
 /*Changes the color of the navbar on scroll*/
 .sticky-top.scrolled {
   background-color: #F6FDF8 !important;
-  transition: background-color 200ms linear;
+  transition: background-color 25ms linear;
 }
 
 .active-menu {

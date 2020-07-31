@@ -18,11 +18,11 @@ $(document).ready(function(){
         alert("Oops, it looks like this function isn't supported on your browser! Manually copy this url for the same effect: http://ms3-move-on.herokuapp.com/index");
     });
 
-    // Adds background color to navbar on scroll down, inspired by source code found on here: https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
+    // Adds background color to navbar on scroll down past 20px, inspired by source code found on here: https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
     $(function () {
         $(document).scroll(function () {
         var $nav = $(".sticky-top");
-        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        $nav.toggleClass('scrolled', $(this).scrollTop() > 20);
         });
     });
 

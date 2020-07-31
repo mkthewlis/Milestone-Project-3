@@ -108,19 +108,44 @@ This project consists of seven pages, three of which can only be accessed after 
 
 #### Consistent features across all pages
 
-- The menu at the top of the page and footer are consistent and responsive throughout the website. 
-- Each page uses interactive arrows to visually encourage the user to scroll down. These can also be clicked on to take them further down the page. The arrows are either the theme blue or yellow to remain consistent on each page.
-- Certain images are used more than once at various points in the website for consistency and familiarity.
-- Each page begins with an image with a fixed background and is then divided into clear sections in a similar pattern.
+- The menu at the top of the page and footer are consistent in design and responsive throughout the website. However, the contents of the menu changes depending on if a user is logged in or not.
+- Each page has a footer with an arrow button to smoothly scroll back to the top. 
+- The footer also features an icon to copy the URL for ease of sharing the app with others, created with clipboard.js (referenced below).
+- Although each page features different illustrations/ graphics, they are all designed with the same color palette and are from the same illustrator for consistency.
+- All sign in/ sign up buttons are designed consistently in their respective colors across the app.
+- The active page is underlined with a green line to show the user which page their are on.
+- All flash messages appear under the menu bar with the same font and background color throughout the app, and fade out with the same JaveScript function after a few seconds.
 
 #### Home
 
-- The user meets a simple title that explains the purpose of the website and encourages them to read on.
-- The user is then presented with a fact about ocean waste and the mission of *Our Oceans, Our Plastic*.
-- The end of the page provides three links for the user: to learn more, take the quiz or sign up to the newsletter.
+- The user sees two short sentences to welcome them in and to help them immediately understand what the purpose of this app is.
+- The user then scrolls down to see a carousel feature with three sections, explaining the three steps required to use this app. On smaller devices, the carousel is hidden and the user sees a box with the same information to make the design appropriate on all screen sizes.
+- The end of this page provides a prompt for existing users to login with a button that links them to the sign in page.
 
+#### Top Tips
 
+- This page features five recommendations for users to consider when moving home. They are there to inspire users to start thinking about their own lists.
+- When scrolling down, the user is then prompted to sign up if they don't have an account and to sign in if they do.
 
+#### Sign In
+
+- The existing user is welcomed with a 'Good to see you again' title, followed by a form to complete with their log in details.
+- If they enter the wrong password, a flash error message appears to prompt them to check their spelling.
+- If they enter a username that doesn't exist in the database, they are prompted to sign up and create an account.
+- Users who don't yet have an account are prompted to sign up with a button next to the sign in form.
+
+#### Sign Up
+
+- New users are welcomed with a 'Good to have you onboard!' title, followed by a form to complete with their log in details.
+- If they enter a username that already exists, a flash error message tells the user the issue and encourages them to try with another username. 
+- Users who already have an account are prompted to sign in with a button next to the sign up form.
+
+#### My Tasks
+
+- Once a user has either signed up or signed in, they are directed to their 'My Tasks' page with an overview of their tasks.
+- If they don't have any tasks yet, they are encouraged to begin by adding their first task.
+- The 'Add task' button directs a user to the 'Add a task' page (described below).
+- If the user has already created some tasks, these are separated into two lists: Pending and Completed Tasks respectively. Pending tasks can be clicked on to reveal an accordion displaying more information about the task and the following buttons: Complete, Edit, Delete. The 'Complete' button moves the task to the completed list, the 'Edit' button redirects the user to the 'Edit Task' page (described below) and the 'Delete' button removes the task completely.
 
 
 ### Sources:

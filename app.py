@@ -196,22 +196,16 @@ def complete_task(task_id):
         {"$set": {
         "complete": True}})
 
+    flash("Well done! You\'re one step closer to being ready to MoveOn.")
     return redirect(url_for('overview'))
 
 
 @app.route('/delete_task/<task_id>')
 def delete_task(task_id):
     mongo.db.tasks.remove({'_id': ObjectId(task_id)})
-    #Redirects to task list so users see task is gone
+    
+    flash("Your task has been deleted. Why not add another?")
     return redirect(url_for('overview'))
-
-
-# @app.route('/remove_completed_task/<complete>')
-# def remove_completed_task(complete):
-    # mongo.db.tasks.remove({'_id': ObjectId(complete)})
-    # Redirects to task list so users see task is gone
-    # return redirect(url_for('overview'))
-
 
 
 if __name__ == '__main__':

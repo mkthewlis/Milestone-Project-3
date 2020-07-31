@@ -23,6 +23,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse menu-font" id="navbarNav">
+                    <!--Individual blocks within each navbar item class add a class if the page is active-->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mr-2">
                             <a class="nav-link {% block nav_home %}{% endblock %}" href="{{url_for('index')}}">Home</a>
@@ -52,12 +53,13 @@
             </nav>
         </header>
 
-
-        <main class="main-margin">
+        <!--Block content to be filled in on each html template page -->
+        <main>
         {% block content %}
         {% endblock %}
         </main>
 
+        <!--Footer with clipboard.js functionality to allow users to copy the url-->
         <footer class="container-fluid" id="footer-position">
             <div class="row">
                 <div class="col-9 col-md-6 offset-md-3 text-center">

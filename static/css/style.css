@@ -533,11 +533,6 @@ ul p {
 
 /*----------------------------------------------------tips.html media queries*/
 
-@media screen and (max-width: 1024px){
-    .tips-list{
-        font-size: 30px;
-    }
-}
 
 @media screen and (max-width: 767px){
     .tips-image {

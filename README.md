@@ -229,7 +229,7 @@ This project consists of seven pages, three of which can only be accessed after 
 - Design inspiration - https://www.checkli.com/ and https://monday.com/ 
 - Change form colors when active - https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow
 - Add list items for each task - https://www.geeksforgeeks.org/todo-list-app-using-flask-python/
-- Scroll top JavaScrip - https://www.journaldev.com/5446/how-to-create-scroll-to-top-animation-in-jquery
+- Scroll top JavaScrip - https://codepen.io/deveb22/pen/QxPmGz
 - Clipboard.js - https://clipboardjs.com/
 - Background color jquery code - https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
 - Datetime picker - https://bootstrapious.com/p/bootstrap-datepicker

@@ -170,17 +170,39 @@ body {
     width: 103px;
 }
 
-#back-to-top {
-    text-decoration: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    line-height: 56px;
-    color: #E99B9D;
-    font-size: 40px;
+/*Scroll to top button inspired by: https://codepen.io/deveb22/pen/QxPmGz */
+#scroll-top-button {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
 }
 
-#back-to-top:hover {
-    color: #A7E8BD;
+#scroll-top-button::after {
+    content: "\f0aa";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #E99B9D;
+}
+#scroll-top-button:hover::after {
+    cursor: pointer;
+    color: #7DDE9D;
+}
+
+#scroll-top-button.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 .task-btn {
@@ -465,6 +487,9 @@ body {
     border-color: #A7E8BD !important;
 }
 
+.calender-icon {
+    cursor: pointer;
+}
 
 /*----------------------------------------------------------------------------### END OF: signin.html & signup.html ### */
 /*----------------------------------------------------------------------------### START OF: overview.html ### */

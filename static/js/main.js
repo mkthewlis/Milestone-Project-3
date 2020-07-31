@@ -2,12 +2,6 @@ let clipboard = new Clipboard('.copy-icon');
 
 $(document).ready(function(){
 
-    //Allows user to smooth scroll to top from footer, inspired by source code found on here: https://www.journaldev.com/5446/how-to-create-scroll-to-top-animation-in-jquery
-    $("a[href='#container']").click(function () {
-        $("html, body").animate({ scrollTop: 0 }, 700);
-            return false;
-        });
-
     // Success message when user has copied URL from footer
     clipboard.once('success', function(e) {
         $('.copy-icon').append('<p class="copy-success">Copied!</p>');
@@ -37,6 +31,23 @@ $(document).ready(function(){
             format: "dd/mm/yyyy"
         });
     });
+
+    // Smooth scroll to top function courtesy of: https://codepen.io/deveb22/pen/QxPmGz
+    var scrollBtn = $('#scroll-top-button');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 80) {
+            scrollBtn.addClass('show');
+        } else {
+            scrollBtn.removeClass('show');
+        }
+    });
+
+    scrollBtn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '80');
+    });
+
 });
 
 

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session, flash
+from flask import Flask, render_template, redirect, request, url_for, session, flash, Markup
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
@@ -157,7 +157,7 @@ def add_task():
     }
     tasks.insert_one(form_data)
 
-    flash('Great, your task has been added! Return to \'My Tasks\' for an overview or add another task while you\'re here.')
+    flash(Markup('Great, your task has been added! Return to <a href=\"http://ms3-move-on.herokuapp.com/overview\">\'My Tasks\'</a> for an overview or add another task while you\'re here.'))
     return redirect(url_for('new_task'))
 
 

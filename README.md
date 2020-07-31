@@ -84,19 +84,19 @@ Regardless of which form they complete and submit, they are navigated to a perso
 
 > Note: Throughout the design process, I kept referring back to my original 'Main Aims', 'User Stories' and preliminary research to make sure that my project was developing as intended.
 
-### Screenshots of the design process
+### Documenting the design process
 
 Selected color palette:
 ![Color palette created with coolors.co](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/color_palette.png)
 
 Design for desktop devices:
-![My workspace on Figma](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/am_i_responsive.png)
+![My workspace on Figma](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/figma_desktop.png)
 
 Design for mobile devices:
-![My responsive design for mobile devices](https://github.com/mkthewlis/Milestone-Project-2/blob/master/assets/images/readme-images/figma_mobile.png)
+![My responsive design for mobile devices](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/figma_mobile.png)
 
 Design for tablet devices:
-![My responsive design for tablet devices](https://github.com/mkthewlis/Milestone-Project-2/blob/master/assets/images/readme-images/figma_tablet.png)
+![My responsive design for tablet devices](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/figma_tablet.png)
 
 [The entire workspace can be viewed on Figma with this link.](https://www.figma.com/file/Hv9GYC33ydTGLuwIxydgRr/Code-Institute?node-id=170%3A2)
 

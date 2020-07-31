@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+
+<!--Block code to indicate which page is active in the navbar-->
 {% block nav_overview %} active-menu {% endblock %}
+
+<!--Allows flash messages to be displayed at the top of the screen-->
 {% block content %}
 {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -9,6 +13,7 @@
     {% endif %}
 {% endwith %}
 
+<!--Welcome message uses the user's own username to personalize the text-->
 <div class="container">
 	<div class="row">
 		<div class="col">
@@ -17,8 +22,8 @@
 	</div>
 </div>
 <div class="container">
-<!--Following source used as guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
     <div class="row">
+        <!--The complete, pending and empty list titles are brought over from the app.py file through jinja-->
 	    <div class="col-12 text-center">
 		    <h4 class="smaller-heading">{{ empty_list | safe }}</h4>
 	    </div>
@@ -26,6 +31,7 @@
 		    <h4 class="smaller-heading"><strong>{{ pending_tasks| safe }} </strong></h4>
 	    </div>
 	    <div class="col-12 col-lg-6">
+        <!--The following source was used as a guide for list item: https://www.geeksforgeeks.org/todo-list-app-using-flask-python/-->
 		{% for task in tasks %}
             {% if not task.complete %}
                 <ul class="remove-bullets overview-padding-sm-screens">
@@ -56,7 +62,7 @@
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <h4 class="list-title">Are you sure you want to delete this task?</h4>
+                                                    <h4 class="list-title text-center">Are you sure you want to delete this task?</h4>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn task-btn complete-btn-modal" data-dismiss="modal">No, let's keep it</button>
@@ -65,7 +71,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--<a class="btn task-btn delete-btn" href="{{url_for('delete_task', task_id=task._id)}}">Delete</a>-->
                                 </ul>
                             </div>
                         </div>
@@ -73,6 +78,7 @@
                 </ul>
             {% endif %}
 		{% endfor %}
+        <!--Completed task loop to display all complete tasks-->
 		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
 		{% for complete in completed %}
             <div class="list-title extra-list-padding overview-padding-sm-screens">

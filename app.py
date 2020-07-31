@@ -181,10 +181,8 @@ def update_tasks(task_id):
     #Finds the task with matching id
     username = session['username']
 
-    # if request.method == 'POST':
-
-    #else:   
-    updating_task = mongo.db.tasks.find_one_and_update({"_id": ObjectId(task_id)}, 
+    if request.method == 'POST':
+        updating_task = mongo.db.tasks.find_one_and_update({"_id": ObjectId(task_id)}, 
         {"$set":
         {"username": username,
         "task_title": request.form.get("task_title"),
@@ -194,8 +192,13 @@ def update_tasks(task_id):
         "complete": False}
     })
     
-    flash('Your task has been changed! Return to \'My Tasks\' for an overview.')
-    return render_template('updatetasks.html', task=updating_task)
+        flash('Success, your task has been changed!')
+        return redirect(url_for('overview', task=updating_task))
+    
+    else:
+        updating_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)}) 
+        return render_template('updatetasks.html', task=updating_task)
+
 
 
 # Function to update tasks to move them to 'complete tasks' list

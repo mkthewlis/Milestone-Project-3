@@ -24,16 +24,16 @@
             <!--Update form contains previous task values as default until updated by user-->
             <form action="{{ url_for('update_tasks', task_id=task._id) }}" method="POST">
                 <div class="form-group">
-                    <input id="task_title" name="task_title" type="text" class="form-control form-control-edit" value="Task Name" required>
+                    <input id="task_title" name="task_title" type="text" class="form-control form-control-edit" value="{{ task.task_title }}" required>
                 </div>
                 <div class="form-group">
-                    <input id="task_info" name="task_info" type="text" class="form-control form-control-edit" value="Extra Information" required>
+                    <input id="task_info" name="task_info" type="text" class="form-control form-control-edit" value="{{ task.task_info }}" required>
                 </div>
                 <div class="form-group">
-                    <input id="delegation" name="delegation" type="text" class="form-control form-control-edit" value="Delegated to" required>
+                    <input id="delegation" name="delegation" type="text" class="form-control form-control-edit" value="{{ task.delegation }}" required>
                 </div>
                 <div class="form-group">
-                    <input id="task_due" name="task_due" type="text" class="form-control form-control-edit" value="Due Date" required>
+                    <input id="task_due" name="task_due" type="text" class="form-control form-control-edit" value="{{ task.task_due }}" required>
                 </div>
                 <input class="task-btn edit-btn title-margin-top" type="submit" value="Add Task">
             </form>

@@ -157,6 +157,7 @@ def add_task():
     }
     tasks.insert_one(form_data)
 
+    flash('Great, your task has been added! Return to \'My Tasks\' for an overview or add another task while you\'re here.')
     return redirect(url_for('new_task'))
 
 
@@ -182,6 +183,7 @@ def update_tasks(task_id):
         "complete": False}
     })
     
+    flash('Your task has been changed! Return to \'My Tasks\' for an overview.')
     return render_template('updatetasks.html', task=updating_task)
 
 

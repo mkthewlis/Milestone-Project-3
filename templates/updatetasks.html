@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p class="flash-messages" id="current-message">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
 <div class="container">
     <div class="row">
         <div class="col-12">

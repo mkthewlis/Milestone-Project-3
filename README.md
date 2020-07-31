@@ -109,12 +109,14 @@ This project consists of seven pages, three of which can only be accessed after 
 #### Consistent features across all pages
 
 - The menu at the top of the page and footer are consistent in design and responsive throughout the website. However, the contents of the menu changes depending on if a user is logged in or not.
+- The menu bar for users logged in features a 'Sign Out' button where the 'Sign Up' button usually is. When a user in session chooses to sign out, a flash message confirms this action and they are redirected back to the 'Sign In' page.
 - Each page has a footer with an arrow button to smoothly scroll back to the top. 
 - The footer also features an icon to copy the URL for ease of sharing the app with others, created with clipboard.js (referenced below).
 - Although each page features different illustrations/ graphics, they are all designed with the same color palette and are from the same illustrator for consistency.
 - All sign in/ sign up buttons are designed consistently in their respective colors across the app.
 - The active page is underlined with a green line to show the user which page their are on.
 - All flash messages appear under the menu bar with the same font and background color throughout the app, and fade out with the same JaveScript function after a few seconds.
+- If a user has not logged in, they are unable to access the pages closed to users in session as the pages are redirected back to the open pages, with most of these redirections leading to the 'Sign Up' page to prompt them to create an account.
 
 #### Home
 
@@ -144,8 +146,32 @@ This project consists of seven pages, three of which can only be accessed after 
 
 - Once a user has either signed up or signed in, they are directed to their 'My Tasks' page with an overview of their tasks.
 - If they don't have any tasks yet, they are encouraged to begin by adding their first task.
-- The 'Add task' button directs a user to the 'Add a task' page (described below).
-- If the user has already created some tasks, these are separated into two lists: Pending and Completed Tasks respectively. Pending tasks can be clicked on to reveal an accordion displaying more information about the task and the following buttons: Complete, Edit, Delete. The 'Complete' button moves the task to the completed list, the 'Edit' button redirects the user to the 'Edit Task' page (described below) and the 'Delete' button removes the task completely.
+- The 'Add a task' button directs a user to the 'Add a task' page (described below).
+- If the user has already created some tasks, these are separated into two lists: Pending and Completed Tasks respectively. Pending tasks can be clicked on to reveal an accordion displaying more information about the task and the following buttons: Complete, Edit, Delete. The 'Complete' button moves the task to the completed list with a flash message to confirm this, the 'Edit' button redirects the user to the 'Edit Task' page (described below) and the 'Delete' button removes the task completely with another flash message to confirm that it has been deleted.
+
+#### Add a new task
+
+- This page contains a form for the user to complete with details about their task, including who it is delegated to and when they should have it completed by.
+- Each time a user adds a task, a success message flashes at the top to confirm it has been added.
+- When the user is finished adding new tasks, they can return to their 'My Tasks' page with a 'View my Checklist' button or by using the link in the menu bar.
+
+#### Edit task
+
+- Similar to the 'Add a new task' page, this page contains a form for the user to complete and submit.
+- A success messages flashes to confirm the changes they have made to their task.
+- The user can choose to navigate back to their tasks with the 'View my Checklist' button or by following the menu bar.
+
+### Features Left to Implement
+
+- I think that there is a lot of potential to further develop this app, which is unfortunately beyond the scope and time frame of this Milestone Project with *The Code Institute*. Most notably, in the future I would consider adding a feature for users to be able to share some of their tasks with the MoveOn community, adding to the 'Top Tips' alreadu listed on the website. This would create a sense of community and would be a great way for new and existing users to share ideas, tips and suggestions to get organised for a move.
+
+- Another feature would be to expand the 'My Tasks' landing page, adding the option for users to share their lists with friends and family so several users can mark tasks as complete whilst getting ready for their move together.
+
+- I could also consider adding a feature to report bugs found back to me, to be able to improve the app for future users as and when issues are found.
+
+## Technologies Used
+
+
 
 
 ### Sources:

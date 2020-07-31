@@ -161,6 +161,17 @@ def add_task():
     return redirect(url_for('new_task'))
 
 
+# Redirects user to edit task page if user is logged in 
+@app.route('/edit_task/<task_id>')
+def edit_task():
+    if 'username' not in session: 
+        return render_template('signup.html')
+
+    task_id = mongo.db.meetings.find_one({'_id': ObjectId(task_id)})
+    return render_template('updatetasks.html', task=task)
+
+
+
 # Source used for reference for this function: https://kb.objectrocket.com/mongo-db/how-to-update-a-mongodb-document-in-python-356
 
 @app.route('/update_tasks/<task_id>', methods=['POST', 'GET'])

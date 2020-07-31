@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+
+<!--Block content to extend content of base.html-->
 {% block content %}
+
+<!--Allows flash messages to be displayed at the top of the screen-->
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for msg in messages %}
@@ -16,6 +20,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-6 text-center">
+            <!--Form collects user's inputted data to add it to the database when form is posted-->
             <form action="{{ url_for('add_task') }}" method="POST">
                 <div class="form-group">
                     <input id="task_title" name="task_title" type="text" class="form-control" placeholder="Task Name" required>
@@ -40,8 +45,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center standard-box lower-box-margin responsive-lower-margin">
-            <h4 class="smaller-heading">Return to my checklist</h4>   
-            <a class="btn standard-sign-up-btn" id="redirect-overview" href="{{url_for('overview')}}">View my checklist</a>
+            <h4 class="smaller-heading">Return to My Tasks</h4>   
+            <a class="btn standard-sign-up-btn" id="redirect-overview" href="{{url_for('overview')}}">View My Tasks</a>
         </div>
     </div>
 </div>

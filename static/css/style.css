@@ -192,6 +192,8 @@ body {
     min-width: 60px;
     text-align: center;
     display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .expand-btn {
@@ -483,8 +485,16 @@ ul p {
 
 
 /*----------------------------------------------------------------------------### END OF: overview.html ### */
-/*----------------------------------------------------------------------------### START OF: newtasks.html ### */
+/*----------------------------------------------------------------------------### START OF: updatetasks.html ### */
 
+.form-control-edit:focus {
+    border-color: #FFC885;
+    box-shadow: 0 1px 1px #FFC885 inset, 0 0 8px #FFC885;
+    outline: 0 none;
+}
+
+/*----------------------------------------------------------------------------### END OF: updatetasks.html ### */
+/*----------------------------------------------------------------------------### START OF: media queries ### */
 /*----------------------------------------------------General app media queries*/
 
 @media screen and (max-width: 422px){

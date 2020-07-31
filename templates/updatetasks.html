@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+
+<!--Block content to extend content of base.html-->
 {% block content %}
+
+<!--Allows flash messages to be displayed at the top of the screen-->
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for msg in messages %}
@@ -17,18 +21,19 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-6 text-center">
+            <!--Update form contains previous task values as default until updated by user-->
             <form action="{{ url_for('update_tasks', task_id=task._id) }}" method="POST">
                 <div class="form-group">
-                    <input id="task_title" name="task_title" type="text" class="form-control" value="Task Name" required>
+                    <input id="task_title" name="task_title" type="text" class="form-control form-control-edit" value="Task Name" required>
                 </div>
                 <div class="form-group">
-                    <input id="task_info" name="task_info" type="text" class="form-control" value="Extra Information" required>
+                    <input id="task_info" name="task_info" type="text" class="form-control form-control-edit" value="Extra Information" required>
                 </div>
                 <div class="form-group">
-                    <input id="delegation" name="delegation" type="text" class="form-control" value="Delegated to" required>
+                    <input id="delegation" name="delegation" type="text" class="form-control form-control-edit" value="Delegated to" required>
                 </div>
                 <div class="form-group">
-                    <input id="task_due" name="task_due" type="text" class="form-control" value="Due Date" required>
+                    <input id="task_due" name="task_due" type="text" class="form-control form-control-edit" value="Due Date" required>
                 </div>
                 <input class="task-btn edit-btn title-margin-top" type="submit" value="Add Task">
             </form>
@@ -41,8 +46,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center standard-box lower-box-margin responsive-lower-margin">
-            <h4 class="smaller-heading">Return to my checklist</h4>   
-            <a class="btn standard-sign-up-btn" id="redirect-overview" href="{{url_for('overview')}}">View my checklist</a>
+            <h4 class="smaller-heading">Return to My Tasks</h4>   
+            <a class="btn standard-sign-up-btn" id="redirect-overview" href="{{url_for('overview')}}">View My Tasks</a>
         </div>
     </div>
 </div>

@@ -459,6 +459,12 @@ body {
     margin-top: 50px;
 }
 
+.datepicker table tr td.today {
+    color: #F9F6EC !important;
+    background-color: #A7E8BD !important;
+    border-color: #A7E8BD !important;
+}
+
 
 /*----------------------------------------------------------------------------### END OF: signin.html & signup.html ### */
 /*----------------------------------------------------------------------------### START OF: overview.html ### */
@@ -610,9 +616,4 @@ ul p {
         margin-top: 50px;
         margin-bottom: 30px;
     }
-}
-
-
-#task-due > span:hover{
-    cursor: pointer;
 }

@@ -32,7 +32,6 @@ $(document).ready(function(){
     // Function required for the date/time picker in the task forms
     $(function () {
         $('.datepicker').datepicker({
-            autoclose: true, 
             todayHighlight: true,
             clearBtn: true,
             format: "dd/mm/yyyy"

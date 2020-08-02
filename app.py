@@ -36,10 +36,12 @@ def index():
 
 
 # Routes user to top tips
-@app.route('/tips')
+@app.route('/tips', methods=['POST', 'GET'])
 def tips():
-
-
+    if 'username' not in session:
+        hide_form = 'hide_form'
+        login_prompt = '<a href="{{url_for(\'sign_in\')}}">Sign in</a> or <a href="{{url_for(\'sign_up\')}}">Sign Up</a> to post your tip below!'
+        return render_template('tips.html', tips = mongo.db.tips.find(), login_prompt=login_prompt, hide_form=hide_form)
 
     return render_template('tips.html', tips = mongo.db.tips.find())
 

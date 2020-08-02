@@ -36,10 +36,11 @@
 	</div>
     <div class="row">
         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <h4 class="smaller-heading"><strong>Want to share your own tip with the community? </strong><a href="{{url_for('sign_in')}}">Sign in</a> or <a href="{{url_for('sign_up')}}">Sign Up</a> to post your tip below!</h4>
+            <h4 class="smaller-heading"><strong>Want to share your own tip with the community? </strong></h4>
+            <h4 class="smaller-heading">{{ login_prompt | safe }}</h4>
         </div>
     </div>
-    <div class="row">
+    <div class="row {{ hide_form }}">
         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <input type="text" class="form-control" id="user_tip" name="user_tip" placeholder="Enter your moving tip here" required>
             <input class="task-btn sign-in-btn title-margin-top" type="submit" value="Share Tip">

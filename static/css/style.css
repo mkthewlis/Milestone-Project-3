@@ -642,3 +642,8 @@ ul p {
         margin-bottom: 30px;
     }
 }
+
+
+.hide_form {
+    display: none;
+}

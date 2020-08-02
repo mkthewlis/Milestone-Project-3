@@ -47,6 +47,7 @@ def tips():
         return render_template('tips.html', tips = mongo.db.tips.find(), hide_prompt=hide_prompt)
 
 
+# This routing allows users to add a tip to the community board of moving tips
 @app.route('/add_tip', methods=['POST'])
 def add_tip():
     tips = mongo.db.tips
@@ -57,19 +58,37 @@ def add_tip():
     }
 
     tips.insert_one(form_data)
-
     flash(Markup('Your tip has been added! Thanks for sharing your advice to help others MoveOn.'))
     return redirect(url_for('tips'))
 
 
-@app.route('/edit_tip')
-def edit_tip():
-    return ''
+# Allows user to edit tips that they have uploaded in a modal popup
+@app.route('/edit_tip/<tip_id>', methods=['POST', 'GET'])
+def edit_tip(tip_id):
+    username = session['username']
+
+    if request.method == 'POST':
+        updating_tip = mongo.db.tips.find_one_and_update({"_id": ObjectId(tip_id)}, 
+        {"$set":
+            {"username": username,
+            "user_tip": request.form.get("user_tip")}
+    })
+        flash('Success, your tip has been changed!')
+        return redirect(url_for('tips', tip=updating_tip))
+    
+    else:
+        updating_tip = mongo.db.tips.find_one({"_id": ObjectId(tip_id)}) 
+        return render_template('tips.html', tip=updating_tip)
 
 
-@app.route('/delete_tip')
-def delete_tip():
-    return ''
+# Checks if username is in session so delete function is available for their tips
+@app.route('/delete_tip/<tip_id>')
+def delete_tip(tip_id):
+
+    mongo.db.tips.remove({'_id': ObjectId(tip_id)})
+    
+    flash("Your tip has been deleted from the community board. Why not add another?")
+    return redirect(url_for('tips'))
 
 
 # Routing for returning users to log back in
@@ -200,7 +219,7 @@ def edit_task():
     if 'username' not in session: 
         return render_template('signup.html')
 
-    task_id = mongo.db.meetings.find_one({'_id': ObjectId(task_id)})
+    task_id = mongo.db.tasks.find_one({'_id': ObjectId(task_id)})
     return render_template('updatetasks.html', task=task)
 
 
@@ -247,6 +266,7 @@ def complete_task(task_id):
     return redirect(url_for('overview'))
 
 
+# Allows user to delete a pending task from their list (with a bootstrap modal confirming their choice first)
 @app.route('/delete_task/<task_id>')
 def delete_task(task_id):
     mongo.db.tasks.remove({'_id': ObjectId(task_id)})

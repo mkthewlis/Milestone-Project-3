@@ -15,8 +15,8 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-12">
-			<h3 class="standard-heading title-margin-top tips-heading">Our community has shared their top tips to get you ready to MoveOn</h3>
+		<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+			<h3 class="standard-heading title-margin-top tips-heading">Sharing is caring. Our community board features great tips to help you get ready to MoveOn!</h3>
             <hr class="standard-divider"/>
 		</div>
 	</div>
@@ -35,9 +35,12 @@
                 </li>
                 <li class="list-text tips-list">Get a good night’s sleep before your moving day and get ready to say hello to your new home!
                 </li>
+
+                <!--Shows all tips added by user community-->
                 {% for tip in tips %}
                 <li class="list-text tips-list">{{tip.user_tip}}
-                    {% if session['username'] %}
+                    <!--Checks if user is in session before displaying edit/ delete buttons-->
+                    {% if current_user == session['username'] %}
                     <button type="button" class="btn task-btn delete-btn" data-toggle="modal" data-target="#deleteModal{{ tip._id }}">Delete
                     </button>
                     <!-- Delete modal content-->

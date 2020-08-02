@@ -457,6 +457,13 @@ body {
     margin-top: 80px;
 }
 
+.hide_form {
+    display: none;
+}
+
+.hide_prompt {
+    display: none;
+}
 
 
 /*----------------------------------------------------------------------------### END OF: tips.html ### */
@@ -641,13 +648,4 @@ ul p {
         margin-top: 50px;
         margin-bottom: 30px;
     }
-}
-
-
-.hide_form {
-    display: none;
-}
-
-.hide_prompt {
-    display: none;
 }

@@ -58,7 +58,7 @@ def add_tip():
     }
 
     tips.insert_one(form_data)
-    flash(Markup('Your tip has been added! Thanks for sharing your advice to help others MoveOn.'))
+    flash(Markup("Your tip has been added! Thanks " + username + " for sharing your advice to help others MoveOn."))
     return redirect(url_for('tips'))
 
 

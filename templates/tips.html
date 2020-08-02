@@ -39,8 +39,8 @@
                 <!--Shows all tips added by user community-->
                 {% for tip in tips %}
                 <li class="list-text tips-list">{{tip.user_tip}}
-                    <!--Checks if user is in session before displaying edit/ delete buttons-->
-                    {% if current_user == session['username'] %}
+                    <!--Checks if user is in session matches the object id username before displaying edit/ delete buttons-->
+                    {% if session["username"] == tip["username"] %}
                     <button type="button" class="btn task-btn delete-btn" data-toggle="modal" data-target="#deleteModal{{ tip._id }}">Delete
                     </button>
                     <!-- Delete modal content-->

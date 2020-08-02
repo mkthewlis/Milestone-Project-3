@@ -8,7 +8,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<h3 class="standard-heading title-margin-top tips-heading">Here are our top tips to get you ready to MoveOn</h3>
+			<h3 class="standard-heading title-margin-top tips-heading">Our community has shared their top tips to get you ready to MoveOn</h3>
             <hr class="standard-divider"/>
 		</div>
 	</div>
@@ -18,8 +18,6 @@
 		<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 			<ul class="remove-bullets">
                 <li class="list-text tips-list">Start planning early - getting ready to move often takes more time than we think!
-                </li>
-                <li class="list-text tips-list">Make a list of all that needs doing and prioritise your checklist to get everything done in time.
                 </li>
                 <li class="list-text tips-list">Inform your local postal service that you will be moving and arrange to have all your mail forwarded 
                 to your new address.
@@ -36,6 +34,17 @@
             </ul>
 		</div>
 	</div>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <h4 class="smaller-heading"><strong>Want to share your own tip with the community? </strong><a href="{{url_for('sign_in')}}">Sign in</a> or <a href="{{url_for('sign_up')}}">Sign Up</a> to post your tip below!</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <input type="text" class="form-control" id="user_tip" name="user_tip" placeholder="Enter your moving tip here" required>
+            <input class="task-btn sign-in-btn title-margin-top" type="submit" value="Share Tip">
+        </div>
+    </div>
 </div>
 <div class="container tips-signup-prompt">
 	<div class="row">

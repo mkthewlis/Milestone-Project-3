@@ -38,6 +38,9 @@ def index():
 # Routes user to top tips
 @app.route('/tips')
 def tips():
+
+
+
     return render_template('tips.html', tips = mongo.db.tips.find())
 
 

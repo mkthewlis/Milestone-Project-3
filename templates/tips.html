@@ -29,6 +29,10 @@
                 </li>
                 <li class="list-text tips-list">Get a good night’s sleep before your moving day and get ready to say hello to your new home!
                 </li>
+                {% for tip in tips %}
+                <li class="list-text tips-list">{{tip.user_tip}}
+                </li>
+                {% endfor %}
             </ul>
 		</div>
 	</div>

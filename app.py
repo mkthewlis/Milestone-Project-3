@@ -18,6 +18,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 tasks = mongo.db.tasks.find()
 users = mongo.db.users
+tips = mongo.db.tips.find()
 
 
 """ The following code creates a simple app that allows a user to register, login and view their account. From there, they can 
@@ -37,7 +38,8 @@ def index():
 # Routes user to top tips
 @app.route('/tips')
 def tips():
-    return render_template('tips.html')
+    return render_template('tips.html', tips = mongo.db.tips.find())
+
 
 # Routing for returning users to log back in
 @app.route('/sign_in', methods=['POST', 'GET'])

@@ -35,7 +35,7 @@ def index():
     return render_template('index.html')
 
 
-# Routes user to top tips
+# Routes user to top tips page with different content depending on if they are logged in or not
 @app.route('/tips', methods=['POST', 'GET'])
 def tips():
     if 'username' not in session:
@@ -45,6 +45,31 @@ def tips():
     else: 
         hide_prompt = 'hide_prompt'
         return render_template('tips.html', tips = mongo.db.tips.find(), hide_prompt=hide_prompt)
+
+
+@app.route('/add_tip', methods=['POST'])
+def add_tip():
+    tips = mongo.db.tips
+    username = session['username']
+    form_data = {
+        "username": username,
+        "user_tip": request.form.get("user_tip")
+    }
+
+    tips.insert_one(form_data)
+
+    flash(Markup('Your tip has been added! Thanks for sharing your advice to help others MoveOn.'))
+    return redirect(url_for('tips'))
+
+
+@app.route('/edit_tip')
+def edit_tip():
+    return ''
+
+
+@app.route('/delete_tip')
+def delete_tip():
+    return ''
 
 
 # Routing for returning users to log back in

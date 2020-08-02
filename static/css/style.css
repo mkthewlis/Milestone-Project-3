@@ -647,3 +647,7 @@ ul p {
 .hide_form {
     display: none;
 }
+
+.hide_prompt {
+    display: none;
+}

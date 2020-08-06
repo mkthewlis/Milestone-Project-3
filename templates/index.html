@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+
+<!--Sets this template as current page-->
 {% block nav_home %} active-menu {% endblock %}
 
 {% block content %}
@@ -23,6 +25,7 @@
             <hr class="standard-divider"/>        
         </div>
     </div>
+    <!--Bootstrap carousel feature for medium to large screens-->
     <div class="row">
         <div class="col-lg-10 offset-lg-1">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -68,6 +71,7 @@
                 </a>
             </div>
         </div>
+        <!--On small screens, carousel is replaced with following content for better UX/UI-->
         <div class="col-12 sm-screen-steps">
             <ul class="smallest-screens-padding">
                 <li class="remove-bullets">

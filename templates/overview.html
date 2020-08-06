@@ -82,7 +82,28 @@
 		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
 		{% for complete in completed %}
             <div class="list-title extra-list-padding overview-padding-sm-screens">
-                <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}}</p>
+                <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}} 
+                    <!--Button to launch Bootstrap modal which confirms if a user really wants to delete their completed task-->
+                    <button type="button" class="btn task-btn delete-btn" data-toggle="modal" data-target="#completeModal{{ complete._id }}">Delete
+                    </button>
+                    <!-- Modal content-->
+                    <div class="modal fade" id="completeModal{{ complete._id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 class="list-title text-center">Are you sure you want to delete this completed task?</h4>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn task-btn complete-btn-modal" data-dismiss="modal">No, let's keep it</button>
+                                    <a class="btn task-btn delete-btn-modal" href="{{url_for('delete_complete_task', complete_id=complete._id)}}">Yes, delete it!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p>
             </div>
 		{% endfor %}
     </div>

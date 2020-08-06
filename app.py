@@ -282,6 +282,14 @@ def delete_task(task_id):
     return redirect(url_for('overview'))
 
 
+@app.route('/delete_complete_task/<complete_id>')
+def delete_complete_task(complete_id):
+    mongo.db.tasks.remove({'_id': ObjectId(complete_id)})
+    
+    flash("Your completed task has been deleted")
+    return redirect(url_for('overview'))
+
+
 if __name__ == '__main__':
     app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),

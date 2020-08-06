@@ -78,9 +78,9 @@
                 </ul>
             {% endif %}
 		{% endfor %}
-        <!--Completed task loop to display all complete tasks-->
-		<h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
-		{% for complete in completed %}
+            <!--Completed task loop to display all complete tasks-->
+		    <h4 class="smaller-heading"><strong>{{ completed_tasks|safe }} </strong></h4>
+		    {% for complete in completed %}
             <div class="list-title extra-list-padding overview-padding-sm-screens">
                 <p><i class="fas fa-check complete-tasks"></i>{{complete.task_title}} 
                     <!--Button to launch Bootstrap modal which confirms if a user really wants to delete their completed task-->
@@ -105,10 +105,11 @@
                     </div>
                 </p>
             </div>
-		{% endfor %}
-    </div>
-    <div class="col-12 col-lg-6">
-	    <img class="overview-image img-fluid{{ image_position }}" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
+		    {% endfor %}
+        </div>
+        <div class="col-12 col-lg-6">
+	        <img class="overview-image img-fluid{{ image_position }}" src="{{url_for('static', filename='/images/' + 'undraw_accepted_request.png')}}" alt="Writing a to do list" />
+        </div>
     </div>
 </div>
 <div class="container">

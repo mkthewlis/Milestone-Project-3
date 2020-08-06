@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+
+<!--Sets this template as current page-->
 {% block nav_signin %} active-menu {% endblock %}
+
+<!--Allows flash messages to be displayed at the top of the screen-->
 {% block content %}
 {% with messages = get_flashed_messages() %}
     {% if messages %}

@@ -97,6 +97,7 @@ def sign_in():
     if request.method == "GET":
         # This returns to html page if the request is 'GET' and redirects logged in user to their overview
         if 'username' in session:
+            flash('You\'re already signed in! Log out first if you want to change account.')
             return redirect(url_for('overview'))
 
         return render_template('signin.html')
@@ -155,7 +156,13 @@ def overview():
 # Routing for new users to sign up, hashing the password for security
 @app.route('/sign_up', methods=['POST', 'GET'])
 def sign_up():
-    if request.method == 'POST':
+    if request.method == "GET":
+        # This returns to html page if the request is 'GET' and redirects logged in user to their overview
+        if 'username' in session:
+            flash('You\'re already signed in! Log out first if you want to change account.')
+            return redirect(url_for('overview'))
+
+    else:
         existing_user = users.find_one({'name': request.form['username']})
 
         # If there is no existing user, the entered password is hashed for security before being sent to store in the DB

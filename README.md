@@ -15,6 +15,32 @@ This was the third of four Milestone Projects that made up the Full Stack Web De
 
 [Click here to view the project live.](https://ms3-move-on.herokuapp.com/)
 
+## Table of contents
+
+- [**UX**](#UX)
+    - [Main aims](#Main-aims)
+    - [User Stories](#User-Stories)
+        - [Project Stakeholders](#Project-Stakeholders)
+        - [New Users](#New-Users)
+        - [Returning Users](#Returning-Users)
+        - [Tablet User](#Tablet-User)
+    - [Design Process](#Design-Process)
+        - [UX Research](#Design-Process:-UX-Research)
+        - [UX Design](#Design-Process:-UX-Design)
+    - [Documenting the design process](#Documenting-the-design-process)
+- [**Features**](#Features)
+    - [Existing features](#Existing-features)
+    - [Features left to implement](#Futures-left-to-implement)
+- [**Technologies used**](#Technologies-used)
+- [**Testing**](https://github.com/mkthewlis/Milestone-Project-3/blob/master/testing.md)
+- [**Deployment**](#Deployment)
+    - [Local deployment](#Local-Deployment)
+    - [Deploying this project to Heroku](#Deploying-this-project-to-Heroku)
+- [**Credits**](#Credits)
+    - [Content](#Content)
+    - [Images](#Images)
+    - [Acknowledgements](#Acknowledgements)
+
 ## UX
 
 ### Main aims
@@ -208,7 +234,7 @@ This project consists of seven pages, three of which can only be accessed after 
 - [Heroku](https://www.heroku.com/)
     * I used Heroku as a hosting platform to deploy the live version of my app. 
 
-## Additional tools used
+### Additional tools used
 - [Figma](https://www.figma.com/) 
     * Figma helped me design my project, by creating wireframes for desktop, tablet and mobile devices. 
 - [FontAwesome](https://fontawesome.com/) 
@@ -240,7 +266,41 @@ The deployed project can be viewed on the following link: [MoveOn: Live Website]
 
 The project's GitHub repository can be viewed with the following link: [MoveOn: GitHub Repository](https://github.com/mkthewlis/Milestone-Project-3)
 
-### Deploying to Heroku 
+### Local deployment
+
+If you would like to work on this project further you can clone it to your local machine using the following steps:
+
+1. Scroll to the top of this repository and click on the "clone or download button"
+2. Decide whether you want to clone the project using HTTPS or an SSH key and do the following:
+    * HTTPS: click on the checklist icon to the right of the URL to copy it
+    * SSH key: first click on 'Use SSH' then click on the same icon as above
+3. Open a new Terminal window in your IDE of choice
+4. Change the current working directory to the location where you want the cloned directory.
+5. Enter the following command and press 'Enter' to create your local clone:
+```
+git clone https://github.com/mkthewlis/Milestone-Project-3.git
+```
+
+6. Now create a Database that you intend to use for this cloned project with MongoDB.
+7. Return to the Terminal and enter the following to install all required dependencies:
+```
+pip3 install -r requirements.txt
+```
+8. Create an env.py file with the following content, replacing the 'username','password', 'cluster_name' and 'database_name' with your MongoDB database values:
+```
+import os
+
+os.environ["MONGO_URI"] = "mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority" 
+```
+9. Add your env.py file to .gitignore to make sure your database information is not viewable to others
+10. Your cloned version is now ready to run locally with the following command:
+```
+python3 app.py
+```
+
+You can find both the source of this information and learn more about the process with the following link: [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+### Deploying this project to Heroku 
 
 To deploy the project to Heroku, I used the following steps:
 
@@ -282,40 +342,6 @@ heroku git:remote -a ms3-move-on
 git push heroku master
 ``` 
 9. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the remaining development process.
-
-### Cloning this project
-
-If you would like to work on this project further you can clone it to your local machine using the following steps:
-
-1. Scroll to the top of this repository and click on the "clone or download button"
-2. Decide whether you want to clone the project using HTTPS or an SSH key and do the following:
-    * HTTPS: click on the checklist icon to the right of the URL to copy it
-    * SSH key: first click on 'Use SSH' then click on the same icon as above
-3. Open a new Terminal window in your IDE of choice
-4. Change the current working directory to the location where you want the cloned directory.
-5. Enter the following command and press 'Enter' to create your local clone:
-```
-git clone https://github.com/mkthewlis/Milestone-Project-3.git
-```
-
-6. Now create a Database that you intend to use for this cloned project with MongoDB.
-7. Return to the Terminal and enter the following to install all required dependencies:
-```
-pip3 install -r requirements.txt
-```
-8. Create an env.py file with the following content, replacing the 'username','password', 'cluster_name' and 'database_name' with your MongoDB database values:
-```
-import os
-
-os.environ["MONGO_URI"] = "mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority" 
-```
-9. Add your env.py file to .gitignore to make sure your database information is not viewable to others
-10. Your cloned version is now ready to run locally with the following command:
-```
-python3 app.py
-```
-
-You can find both the source of this information and learn more about the process with the following link: [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ## Credits
 

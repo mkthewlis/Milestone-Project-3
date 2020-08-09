@@ -234,19 +234,27 @@ Please view the complete testing process in this separate document [here](https:
 
 ## Deployment
 
+This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. 
+
+The deployed project can be viewed on the following link: [MoveOn: Live Website](https://ms3-move-on.herokuapp.com/)
+
+The project's GitHub repository can be viewed with the following link: [MoveOn: GitHub Repository](https://github.com/mkthewlis/Milestone-Project-3)
+
 ### Deploying to Heroku 
 
-This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. 
 To deploy the project to Heroku, I used the following steps:
+
 1. I created a Heroku account, signed in and created a new app with a unique name that had not already been taken (this project uses 'ms3-move-on'). I then set the region to the closest to me: 'Europe'.
 2. With the app created, I went to the 'Settings' tab and clicked the 'Reveal Config Variables' button. From here, I input the following values:
 ```
-MONGO_URI mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority
-IP 0.0.0.0
-PORT 5000
+MONGO_URI: mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority
+IP: 0.0.0.0
+PORT: 5000
 ```
-(Note, for the MONGO_URI, I replaced the 'username','password', 'cluster_name' and 'database_name' with my specific database values)
-3. In Gitpod, I created a requirements.txt file with the following code:
+(Note: within the MONGO_URI value, I replaced the 'username','password', 'cluster_name' and 'database_name' with my specific database values. They are kept private for security reasons.)
+
+
+3. In Gitpod, I created a requirements.txt file with the following command:
 ```
 pip3 freeze --local > requirements.txt
 ```
@@ -254,47 +262,76 @@ pip3 freeze --local > requirements.txt
 ```
 echo web: python app.py > Procfile
 ```
-5. I then added these new files with the following:
+5. I then committed these new files with the following:
 ```
 git add .
 ```
 ```
-git commit -m "Initial commit"
+git commit -m ""
 ```
-6. 
+6. With these files committed, I logged in to Heroku using this command and entered my details at the prompt:
+```
+heroku login
+```
+7. Once logged in, I linked my Heroku app created above as the remote repository with this command:
+```
+heroku git:remote -a ms3-move-on
+```
+8. I then completed the deployment by pushing the projekt to Heroku:
+```
+git push heroku master
+``` 
+9. This completed the process of deploying the project to Heroku. Once deployed, I continued to push all changes made to the project to Heroku throughout the remaining development process.
 
+### Cloning this project
 
+If you would like to work on this project further you can clone it to your local machine using the following steps:
 
-
-### Cloning my project
-
-If you would like to work on my project further you can clone it to your local machine using the following steps:
-
-1. Scroll to the top of my repository and click on the "clone or download button"
+1. Scroll to the top of this repository and click on the "clone or download button"
 2. Decide whether you want to clone the project using HTTPS or an SSH key and do the following:
-    * HTTPS: click on the checklist icon to the right of the URL
+    * HTTPS: click on the checklist icon to the right of the URL to copy it
     * SSH key: first click on 'Use SSH' then click on the same icon as above
-3. Open the 'Terminal'
-4. Change the current working directory to the location where you want the cloned directory
-5. Type 'git clone', and then paste the URL you copied earlier.
-6. Press 'Enter' to create your local clone.
-    
-You can find both the source of this information and learn more about the process on the following link: [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+3. Open a new Terminal window in your IDE of choice
+4. Change the current working directory to the location where you want the cloned directory.
+5. Enter the following command and press 'Enter' to create your local clone:
+```
+git clone https://github.com/mkthewlis/Milestone-Project-3.git
+```
 
+6. Now create a Database that you intend to use for this cloned project with MongoDB.
+7. Return to the Terminal and enter the following to install all required dependencies:
+```
+pip3 install -r requirements.txt
+```
+8. Create an env.py file with the following content, replacing the 'username','password', 'cluster_name' and 'database_name' with your MongoDB database values:
+```
+import os
 
+os.environ["MONGO_URI"] = "mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority" 
+```
+9. Add your env.py file to .gitignore to make sure your database information is not viewable to others
+10. Your cloned version is now ready to run locally with the following command:
+```
+python3 app.py
+```
 
+You can find both the source of this information and learn more about the process with the following link: [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
+## Credits
 
-Use the following link to view my live project: [MoveOn](http://ms3-move-on.herokuapp.com/)
+### Content
 
+The content of this website is entirely fictional and written by myself.
 
-### Sources:
-- Coolors - colour picker https://coolors.co/a7e8bd-dce3ed-f6fdf8-f9f6ec-efb7b9-3a2e39
-- UnDraw - source of all cartoon images https://undraw.co/search
-- Design inspiration - https://www.checkli.com/ and https://monday.com/ 
-- Change form colors when active - https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow
-- Add list items for each task - https://www.geeksforgeeks.org/todo-list-app-using-flask-python/
-- Scroll top JavaScrip - https://codepen.io/deveb22/pen/QxPmGz
-- Clipboard.js - https://clipboardjs.com/
-- Background color jquery code - https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling
-- Datetime picker - https://bootstrapious.com/p/bootstrap-datepicker
+### Images
+
+The images are all from unDraw, which is an open source of illustrations. More information about their design project can be found on their website: [unDraw](https://undraw.co/).
+
+### Acknowledgements
+
+Thank you to the following people who helped with support and inspiration:
+
+- My mentor Seun Owonikoko for her attention to detail throughout the development process
+- The talented *Code Institute* tutor Tim Nelson for his advice, guidance and support
+- My classmate Samantha Gore for reviewing my project and code
+- And as always, my family and friends for making me countless cups of tea and giving honest feedback throughout

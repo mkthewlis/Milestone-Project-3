@@ -6,7 +6,8 @@ from flask import (
     request,
     url_for,
     session,
-    flash
+    flash,
+    Markup
 )
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -284,10 +285,10 @@ def add_task():
     }
     tasks.insert_one(form_data)
 
-    flash(
+    flash(Markup(
         'Great, your task has been added! Return to ' +
         '<a href=\"http://ms3-move-on.herokuapp.com/overview\">\'My Tasks\'' +
-        '</a> for an overview or add another task while you\'re here.')
+        '</a> for an overview or add another task while you\'re here.'))
     return redirect(url_for('new_task'))
 
 

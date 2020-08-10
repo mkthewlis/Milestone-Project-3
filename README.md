@@ -25,12 +25,11 @@ This was the third of four Milestone Projects that made up the Full Stack Web De
         - [Returning Users](#Returning-Users)
         - [Tablet User](#Tablet-User)
     - [Design Process](#Design-Process)
-        - [UX Research](#Design-Process:-UX-Research)
-        - [UX Design](#Design-Process:-UX-Design)
     - [Documenting the design process](#Documenting-the-design-process)
 - [**Features**](#Features)
+    - [Database structure](#Database-structure)
     - [Existing features](#Existing-features)
-    - [Features left to implement](#Futures-left-to-implement)
+    - [Features left to implement](#Features-left-to-implement)
 - [**Technologies used**](#Technologies-used)
 - [**Testing**](https://github.com/mkthewlis/Milestone-Project-3/blob/master/testing.md)
 - [**Deployment**](#Deployment)
@@ -134,6 +133,13 @@ Design for tablet devices:
 ### Existing Features
 
 This project consists of seven pages, three of which can only be accessed after a user has created an account and signed in.
+
+#### Database structure
+
+The data for this project is stored in my MongoDB database within three collections as follows:
+- *Users* - This collection stores the user's username and their enctrypted password created when they signed up to MoveOn.
+- *Tasks* - When a user creates a task, it is stored within this collection with the following information: The username linking the task to their profile, the task name, more information about the task, who it is delegated to and when it is due. 
+- *Tips* - Moving tips are added by users who already have an account and are stored in this collection. They are stored together with the username of the user who created the tip and the actual tip content itself.
 
 #### Consistent features across all pages
 
@@ -357,7 +363,7 @@ The images are all from unDraw, which is an open source of illustrations. More i
 
 Thank you to the following people who helped with support and inspiration:
 
-- My mentor Seun Owonikoko for her attention to detail throughout the development process
+- My mentor [Seun Owonikoko](https://github.com/seunkoko) for her attention to detail throughout the development process
 - The talented *Code Institute* tutor Tim Nelson for his advice, guidance and support
-- My classmate Samantha Gore for reviewing my project and code
-- And as always, my family and friends for making me countless cups of tea and giving honest feedback throughout
+- My classmate Samantha Gore for reviewing both my project and code
+- And as always, a big thank you to my family and friends for making me countless cups of tea and giving honest feedback throughout

@@ -18,7 +18,7 @@ The following tests were conducted to test the experience of each user outlined 
 
 #### Returning users
 
-- This returning user wanted to share the app with a friend who was about to begin the same process. Sharing the app is easily done with the feature in the footer - when the user clicks the copy icon, the website url is automatically copied with the help of clipboard.js. The user can then paste the url in a message to their friend.
+- This returning user wanted to share the app with a friend who was about to begin the same process. Sharing the app is easily done with the feature in the footer - when the user clicks the copy icon, the website url is automatically copied with the help of clipboardjs.com. The user can then paste the url in a message to their friend.
 - The user who had already created an account and wanted to add more tasks to their list could do so with a few simple steps: they would use the menu bar to navigate to the 'sign in' page, enter their details and click on the 'Add tasks' button when signed in. Once the task is added, they could either click on the link in the flash message to take them back to their task list, or stay on the same page to add another task.
 
 #### Tablet user
@@ -43,7 +43,15 @@ I checked my CSS code with the [W3C Markup Validation Service](https://jigsaw.w3
 This test passed without any errors.
 
 #### JavaScript
-I used [JSHint](https://jshint.com/) to check my main.js JavaScript file.
+I used [JSHint](https://jshint.com/) to check my JavaScript code.
 This highlighted an error that the variable 'Clipboard' was undefined, relating to the following line of code:
 ![Error: Clipboard](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/error_clipboard.png) 
+However, as I followed the instructions on how to use the clipboardjs API directly from their own website, I decided not to make any changes regarding this error. 
+The process that I followed to integrate clipboard.js into my code can be found on here: [clipboardjs.com](https://clipboardjs.com/)
 
+### Testing compatibility with different browsers
+
+I manually tested the website on the following web browsers, checking that buttons, responsiveness and design worked as planned:
+- Google Chrome 
+- Mozilla Firefox 
+- Apple Safari

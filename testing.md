@@ -25,17 +25,19 @@ The following tests were conducted to test the experience of each user outlined 
 
 - The tablet user would find that the app works just as well on a smaller screen. All features are responsive, including the carousel on the home page that transforms to a list on the smallest screens to improve the user experience.
 
-### Validation
+### Validators and lintners
 
 #### HTML
 My HTML code was passed through the [W3C Markup Validation Service](https://validator.w3.org/).
-Doing so brought up the following errors, all related to creating my HTML files with the use of Jinja templates.
-- Bad value: HTML file structure
+Doing so brought up two errors, both related to creating my HTML files with the use of Jinja templates.
+1. *Bad value: HTML file structure*
 As each HTML file is an extension of base.html, the individual documents do not declare the doctype, set the language or include a head element. This error was therefore present on each file I tested, except for base.html that fulfilled the requirements. This error was to be expected and did not lead to any changes.
+
 ![Error: HTML file structure](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/error_html_structure.png)
 
-- Bad value: 'url for'
+2. *Bad value: 'url for'*
 As with the first error, this was common across all HTML template files. It was also to be expected, as the validator was not anticipating to find `href="...url_for..."`
+
 ![Error: url for](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/error_url_for.png) 
 
 #### CSS
@@ -45,13 +47,88 @@ This test passed without any errors.
 #### JavaScript
 I used [JSHint](https://jshint.com/) to check my JavaScript code.
 This highlighted an error that the variable 'Clipboard' was undefined, relating to the following line of code:
-![Error: Clipboard](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/error_clipboard.png) 
+
+`let clipboard = new Clipboard('.copy-icon');`
+
 However, as I followed the instructions on how to use the clipboardjs API directly from their own website, I decided not to make any changes regarding this error. 
 The process that I followed to integrate clipboard.js into my code can be found on here: [clipboardjs.com](https://clipboardjs.com/)
 
+#### Python
+I used [PEP8](http://pep8online.com/checkresult) to check my Python code.
+This test passed without any errors.
+
+
 ### Testing compatibility with different browsers
 
-I manually tested the website on the following web browsers, checking that buttons, responsiveness and design worked as planned:
+I manually tested the project on the following web browsers, checking that all aspects worked as planned:
 - Google Chrome 
 - Mozilla Firefox 
 - Apple Safari
+
+This did not lead to any errors or problems.
+
+### Testing the design's responsiveness on several screen sizes
+
+As I used a 'mobile first' approach to developing this project, I continued to test the responsiveness of the design throughout development process. As I added each new feature to the project, I used Google Chrome's Dev Tools to view the result on different screen sizes. 
+Doing so helped me make minor adjustments to the margins, padding and font sizes of different aspects of the project. However, this did help me implement a significant change, as outlined below:
+
+While testing the project, I realised that the carousel feature on the home page did not respond well to small screen sizes. I tried adjusting the size of the font and images alike with the use of media queries but this led to a poor user experience as the design felt "squashed". As a result, I decided to replace the carousel with a list of the same html content in a list form. This made for a much better user experience, as shown below:
+
+*Carousel on a large screen*
+![Carousel large screens](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/carousel_lg.png) 
+
+*Carousel on screens narrower than 767px*
+![Carousel smaller screens](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/carousel_sm.png) 
+
+### Manually testing all aspects of the design
+
+#### Menu bar and footer
+1. Menu bar:
+- *Logo* - clicking on the logo takes a user back to the home page
+- *Home* - as above, clicking on this link returns the user to the home page
+- *Sign in* - directs a user to the sign in page
+- *Sign up* - directs a user to the sign up page
+
+2. Footer:
+- Clicking on the copy icon successfully copies the website url
+- The return to top arrow scrolls smoothly to the top of the page
+
+#### Home 
+- *Sign in button* - directs users to sign in page
+- Trying to click this button when a user is already signed in leads to the following flash message error: 'You're already signed in! Sign out first if you want to change account.'
+
+#### Top Tips
+- Prompts to encourage users to share their moving tips with the community successfully link to the sign up and sign in pages respectively
+- *Sign in button* - directs users to sign in page
+- *Sign up button* - directs users to sign up page
+- If a user is signed in, the form to submit a tip successfully appears. They can then write a tip and submit the form to share the idea with the community.
+- Similarly, a user signed in can edit and delete their tip with the respective modals that pop up to confirm this. They can only do so with tips that they have added from their account. 
+
+#### Sign in
+- Trying to submit the sign in form with empty form values does not work as they are required fields
+- Submitting the form with a username that doesn't exist leads to the following flash message error: 'We don't have that username on file! Please check your spelling and try again.'
+- Submitting the form with the incorrect spelling of the password leads to the following flash message error: 'Oops, it looks like you've entered the wrong combination of username and password. Why not try again?'
+- With the correct username and password, a user successfully gets redirected to their 'My Tasks' page
+- *Sign up button* - directs users to sign up page
+
+#### Sign up
+- Trying to submit the sign up form with empty form values does not work as they are required fields
+- Submitting a the form with a username that is already taken leads to the following flash message error: 'Oops, that username already exists! Please try again with another username.'
+
+#### My tasks
+- *Add new task button* - user is redirected to add new task form
+- If a user has pending tasks in their list, the 'edit', 'complete' and 'delete' buttons function as they should, opening respective modals to confirm the actions
+- If a user has complete tasks, the 'delete' button functions as it should
+- As the user is in session, they are successfully able to click the 'sign out' button in the menu bar to sign out
+
+#### Add a new task
+- Trying to submit the add task form with empty form values does not work as they are required fields
+- When filled in, the tasks are successfully added with a flash message confirming this. Within the flash message, the link to return to their 'My Tasks' page works well.
+- *My tasks button* - returns a user to their 'My Tasks' page
+
+#### Edit task
+- The form is automatically filled with the previous values
+- If a user does not fill in the form and returns to their task list, the task maintains the previous values
+- *My tasks button* - returns a user to their 'My Tasks' page
+
+[Return to previous document here](https://github.com/mkthewlis/Milestone-Project-3/blob/master/README.md).

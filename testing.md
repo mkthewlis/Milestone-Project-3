@@ -48,7 +48,9 @@ This test passed without any errors.
 I used [JSHint](https://jshint.com/) to check my JavaScript code.
 This highlighted an error that the variable 'Clipboard' was undefined, relating to the following line of code:
 
-`let clipboard = new Clipboard('.copy-icon');`
+```
+let clipboard = new Clipboard('.copy-icon');
+```
 
 However, as I followed the instructions on how to use the clipboardjs API directly from their own website, I decided not to make any changes regarding this error. 
 The process that I followed to integrate clipboard.js into my code can be found on here: [clipboardjs.com](https://clipboardjs.com/)
@@ -67,6 +69,21 @@ I manually tested the project on the following web browsers, checking that all a
 
 This did not lead to any errors or problems.
 
+### Testing the project on different devices
+
+The project has been tested on the following devices:
+- Apple MacBook Air 13" 
+- Apple MacBook Pro 15" 
+- Apple iPhone 8
+- Apple iPhone Xs Max
+- Apple iPad Air
+- Samsung Galaxy
+- Huawei p30
+- HP EliteBook
+- Lenovo Thinkpad
+
+This did not lead to any errors or problems.
+
 ### Testing the design's responsiveness on several screen sizes
 
 As I used a 'mobile first' approach to developing this project, I continued to test the responsiveness of the design throughout development process. As I added each new feature to the project, I used Google Chrome's Dev Tools to view the result on different screen sizes. 
@@ -74,22 +91,25 @@ Doing so helped me make minor adjustments to the margins, padding and font sizes
 
 While testing the project, I realised that the carousel feature on the home page did not respond well to small screen sizes. I tried adjusting the size of the font and images alike with the use of media queries but this led to a poor user experience as the design felt "squashed". As a result, I decided to replace the carousel with a list of the same html content in a list form. This made for a much better user experience, as shown below:
 
-*Carousel on a large screen*
+*Carousel on a large screen:*
+
+
 ![Carousel large screens](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/carousel_lg.png) 
 
-*Carousel on screens narrower than 767px*
+*Carousel on screens narrower than 767px:*
+
+
 ![Carousel smaller screens](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/carousel_sm.png) 
 
 ### Manually testing all aspects of the design
 
-#### Menu bar and footer
-1. Menu bar:
+#### Menu bar
 - *Logo* - clicking on the logo takes a user back to the home page
 - *Home* - as above, clicking on this link returns the user to the home page
 - *Sign in* - directs a user to the sign in page
 - *Sign up* - directs a user to the sign up page
 
-2. Footer:
+#### Footer
 - Clicking on the copy icon successfully copies the website url
 - The return to top arrow scrolls smoothly to the top of the page
 
@@ -130,5 +150,6 @@ While testing the project, I realised that the carousel feature on the home page
 - The form is automatically filled with the previous values
 - If a user does not fill in the form and returns to their task list, the task maintains the previous values
 - *My tasks button* - returns a user to their 'My Tasks' page
+
 
 [Return to previous document here](https://github.com/mkthewlis/Milestone-Project-3/blob/master/README.md).

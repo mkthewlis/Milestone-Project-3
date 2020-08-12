@@ -33,14 +33,14 @@
                 </div>
                 <div class="form-group">
                     <div class="datepicker date input-group">
-                        <input type="text" class="form-control form-control-edit" id="task_due" name="task_due" placeholder="Due date" required>
+                        <input type="text" class="form-control form-control-edit" id="task_due" name="task_due" value="{{ task.task_due }}" required>
                         <div class="input-group-append">
                             <span class="input-group-text px-4 calender-icon"><i class="far fa-calendar-alt"></i>
                             </span>
                         </div>
                     </div>
                 </div>
-                <input class="task-btn edit-btn title-margin-top" type="submit" value="Edit Task">
+                <input class="task-btn edit-btn title-margin-top" type="submit" value="Update">
             </form>
         </div>
         <div class="col-12 col-md-6">

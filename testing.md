@@ -2,6 +2,31 @@
 
 To return to the previous document, please click [here](https://github.com/mkthewlis/Milestone-Project-3/blob/master/README.md).
 
+- [**Testing User Stories**](#Testing-User-Stories)
+    - [Project Stakeholders](#Project-stakeholders)
+    - [New users](#New-users)
+    - [Returning users](#Returning-users)
+    - [Tablet user](#Tablet-user)
+- [**Validators and Lintners**](#Validators-and-lintners)
+    - [HTML](#HTML)
+    - [CSS](#CSS)
+    - [JavaScript](#JavaScript)
+    - [Python](#Python)
+- [**Compatibility tests**](#Compatibility-tests)
+    - [Using different browsers](#Using-different-browsers)
+    - [Using different devices](#Using-different-devices)
+    - [Using different screen sizes](#Using-different-screen-sizes)
+- [**Manual tests**](#Manual-tests)
+    - [Menu bar](#Menu-bar)
+    - [Footer](#Footer)
+    - [Home](#Home)
+    - [Top Tips](#Top-tips)
+    - [Sign-in](#Sign-in)
+    - [Sign-up](#Sign-up)
+    - [My tasks](#My-tasks)
+    - [Add a new task](#Add-a-new-task)
+    - [Edit task](#Edit-task)
+
 ### Testing User Stories
 
 The following tests were conducted to test the experience of each user outlined earlier in the 'User Stories' section.
@@ -59,8 +84,9 @@ The process that I followed to integrate clipboard.js into my code can be found 
 I used [PEP8](http://pep8online.com/checkresult) to check my Python code.
 This test passed without any errors.
 
+### Compatibility tests
 
-### Testing compatibility with different browsers
+#### Using different browsers
 
 I manually tested the project on the following web browsers, checking that all aspects worked as planned:
 - Google Chrome 
@@ -69,7 +95,7 @@ I manually tested the project on the following web browsers, checking that all a
 
 This did not lead to any errors or problems.
 
-### Testing the project on different devices
+#### Using different devices
 
 The project has been tested on the following devices:
 - Apple MacBook Air 13" 
@@ -84,7 +110,7 @@ The project has been tested on the following devices:
 
 This did not lead to any errors or problems.
 
-### Testing the design's responsiveness on several screen sizes
+#### Using different screen sizes
 
 As I used a 'mobile first' approach to developing this project, I continued to test the responsiveness of the design throughout development process. As I added each new feature to the project, I used Google Chrome's Dev Tools to view the result on different screen sizes. 
 Doing so helped me make minor adjustments to the margins, padding and font sizes of different aspects of the project. However, this did help me implement a significant change, as outlined below:
@@ -101,7 +127,7 @@ While testing the project, I realised that the carousel feature on the home page
 
 ![Carousel smaller screens](https://github.com/mkthewlis/Milestone-Project-3/blob/master/static/images/readme_images/carousel_sm.png) 
 
-### Manually testing all aspects of the design
+### Manual tests
 
 #### Menu bar
 - *Logo* - clicking on the logo takes a user back to the home page
